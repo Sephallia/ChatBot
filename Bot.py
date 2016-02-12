@@ -231,6 +231,54 @@ async def on_message(message):
         time.sleep(3)
         await client.delete_message(msg_obj)
 
+        #IM@S #1
+    if message.content == ("!imas1"):
+        import time
+        msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%201/01.%20Shine%21%21.m4a"
+        msg_obj = await client.send_message(message.channel, msg)
+        time.sleep(3)
+        await client.delete_message(msg_obj)
+        msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%201/02.%20Never%20say%20never%20%7EFor%20Anastasia%20rearrange%20MIX%7E.mp3"
+        msg_obj = await client.send_message(message.channel, msg)
+        time.sleep(3)
+        await client.delete_message(msg_obj)
+        msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%201/02.%20S%28mile%29ING%21%20%7EFor%20Rin%20rearranged%20MIX%7E.mp3"
+        msg_obj = await client.send_message(message.channel, msg)
+        time.sleep(3)
+        await client.delete_message(msg_obj)
+        msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%201/03.%20%23U30df%23U30c4%23U30dc%23U30b7%23U2606%23U2606%23U2605%20%7EFor%20Minami%20rearrange%20MIX%7E.mp3"
+        msg_obj = await client.send_message(message.channel, msg)
+        time.sleep(3)
+        await client.delete_message(msg_obj)
+        msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%201/03.%20%E6%82%B2%E3%81%97%E3%81%BF%E3%82%92%E3%82%84%E3%81%95%E3%81%97%E3%81%95%E3%81%AB%28im%40s1%29.mp3"
+        msg_obj = await client.send_message(message.channel, msg)
+        time.sleep(3)
+        await client.delete_message(msg_obj)
+
+        #IM@S #2
+    if message.content == ("!imas2"):
+        import time
+        msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%202/01%20Anzu%20no%20Uta.mp3"
+        msg_obj = await client.send_message(message.channel, msg)
+        time.sleep(3)
+        await client.delete_message(msg_obj)
+        msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%202/01%20GOIN_%21%21%21.mp3"
+        msg_obj = await client.send_message(message.channel, msg)
+        time.sleep(3)
+        await client.delete_message(msg_obj)
+        msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%202/01.%20Trancing%20Pulse.mp3"
+        msg_obj = await client.send_message(message.channel, msg)
+        time.sleep(3)
+        await client.delete_message(msg_obj)
+        msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%202/02.%20dokxswzi%20-LOVE%20LAIKA%20qfdjt-.mp3"
+        msg_obj = await client.send_message(message.channel, msg)
+        time.sleep(3)
+        await client.delete_message(msg_obj)
+        msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%202/06%20Memories.mp3"
+        msg_obj = await client.send_message(message.channel, msg)
+        time.sleep(3)
+        await client.delete_message(msg_obj)
+
     if message.content.startswith("!fortest"):
         if str(message.author.id) == "97097796372414464":
             import requests
