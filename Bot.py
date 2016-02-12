@@ -57,7 +57,7 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
 #songlist
     if message.content.startswith("!songhelp"):
-        msg = "`!hearttoheart - Queues Heart to Heart`\n`!waowao - Queues WAO-WAO Powerful Day!`\n`!omoide - Queues 思い出以上になりたくて`\n`!sakkaku - Queues 錯覚CROSSROADS`\n`!angelic - Queues Angelic Angel`\n`!sunnydaysong - Queues Sunny Day Song`\n`!yumenotobira - Queues Yume no Tobira`"
+        msg = "`!hearttoheart - Queues Heart to Heart`\n`!waowao - Queues WAO-WAO Powerful Day!`\n`!omoide - Queues 思い出以上になりたくて`\n`!sakkaku - Queues 錯覚CROSSROADS`\n`!angelic - Queues Angelic Angel`\n`!sunnydaysong - Queues Sunny Day Song`\n`!yumenotobira - Queues Yume no Tobira`\n`!imas1 - Queues some IM@S CG songs`\n`!imas2 - Queues some different IM@S CG songs`\n`!itsudemo - Queues (✿◠‿◠) 〜ITSUDEMO (✿◠‿◠) 〜`"
         await client.send_message(message.channel, msg)
 #list of stuff to do
     if message.content.startswith("!todo"):
@@ -277,6 +277,13 @@ async def on_message(message):
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%202/06%20Memories.mp3"
         msg_obj = await client.send_message(message.channel, msg)
         time.sleep(3)
+        await client.delete_message(msg_obj)
+
+    if message.content.startswith("!itsudemo"):
+        import time
+        msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01.%20%E6%B0%B8%E9%81%A0%E3%83%95%E3%83%AC%E3%83%B3%E3%82%BA%28Printemps%29.mp3"
+        msg_obj = await client.send_message(message.channel, msg)
+        time.sleep(2)
         await client.delete_message(msg_obj)
 
     if message.content.startswith("!fortest"):
