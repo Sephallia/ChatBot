@@ -1,6 +1,7 @@
 from __future__ import print_function
 import discord
 import os
+import json
 import requests
 from PIL import Image
 
@@ -61,7 +62,7 @@ async def on_message(message):
 #list of stuff to do
     if message.content.startswith("!todo"):
         if str(message.author.id) == "97097796372414464":
-            msg = "'Code MusicBot auto restart command' \n 'Finish coding 10+1 scout sim' \n 'Figure out that queue thing after shuffle' \n '~~make LewdLive MusicBot~~' \n 'Subunit autoplaylitsts' \n 'Make !music command better"
+            msg = "'Code MusicBot auto restart command' \n 'Finish coding 10+1 scout sim' \n 'Figure out that queue thing after shuffle' \n '~~make LewdLive MusicBot~~' \n '~~Subunit autoplaylitsts~~' \n 'Make !music command better"
             await client.send_message(message.channel, msg)
         else:
             msg = "You're not my Onii-chan!"
@@ -339,4 +340,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
 
-client.run('link21110@hotmail.com', 'link2113')
+filepos = "H:\Documents\PyCharmProjects\ChatBot"
+docs = open(os.path.join(filepos, "username.txt"))
+credentials = json.load(docs)
+client.run(credentials["username"], credentials["password"])
