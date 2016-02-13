@@ -390,24 +390,36 @@ async def on_message(message):
             imagemake = Image.new("RGBA",(2048,2160))
             imgsave = "H:\Documents\PyCharmProjects\ChatBot\Images"
             imagesend = os.path.join(imgsave,"merged.png")
+            imgmergedsend =os.path.join(imgsave,"merged2.png")
             for x in range(11):
-                chance = random.randint(0,100)
-                if 0 <= chance <= 90:
-                    cardid = rlist[random.randint(0,rcounttotal)]
-                    print(cardid)
-                    data = requests.get("http://schoolido.lu/api/cards/" + str(cardid)).json()
-                    cardsave = requests.get(data["card_image"], stream=True)
-                    with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
-                        shutil.copyfileobj(cardsave.raw, out_file)
-                if 91 <= chance <= 99:
+                if 0 <= x <= 9:
+                    notr = 0
+                    chance = random.randint(0,100)
+                    if 0 <= chance <= 97:
+                        cardid = rlist[random.randint(0,rcounttotal)]
+                        print(cardid)
+                        data = requests.get("http://schoolido.lu/api/cards/" + str(cardid)).json()
+                        cardsave = requests.get(data["card_image"], stream=True)
+                        with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
+                            shutil.copyfileobj(cardsave.raw, out_file)
+                    if 98 <= chance <= 99:
+                        cardid = srlist[random.randint(0,srcounttotal)]
+                        print(cardid)
+                        data = requests.get("http://schoolido.lu/api/cards/" + str(cardid)).json()
+                        cardsave = requests.get(data["card_image"], stream=True)
+                        with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
+                            shutil.copyfileobj(cardsave.raw, out_file)
+                        notr = notr + 1
+                    if chance == 100:
+                        cardid = urlist[random.randint(0,urcounttotal)]
+                        print(cardid)
+                        data = requests.get("http://schoolido.lu/api/cards/" + str(cardid)).json()
+                        cardsave = requests.get(data["card_image"], stream=True)
+                        with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
+                            shutil.copyfileobj(cardsave.raw, out_file)
+                        notr = notr + 1
+                elif notr == 0:
                     cardid = srlist[random.randint(0,srcounttotal)]
-                    print(cardid)
-                    data = requests.get("http://schoolido.lu/api/cards/" + str(cardid)).json()
-                    cardsave = requests.get(data["card_image"], stream=True)
-                    with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
-                        shutil.copyfileobj(cardsave.raw, out_file)
-                if chance == 100:
-                    cardid = urlist[random.randint(0,urcounttotal)]
                     print(cardid)
                     data = requests.get("http://schoolido.lu/api/cards/" + str(cardid)).json()
                     cardsave = requests.get(data["card_image"], stream=True)
@@ -436,7 +448,10 @@ async def on_message(message):
                 elif x == 10:
                     imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1025,1441))
                     imagemake.save(imagesend)
-                    await client.send_file(message.channel, imagesend)
+                    imageresize = Image.open(imagesend)
+                    imagesend = imageresize.resize((1024,1080))
+                    imagesend.save(imgmergedsend)
+                    await client.send_file(message.channel, imgmergedsend)
                     print(time.time()-start)
 
         else:
