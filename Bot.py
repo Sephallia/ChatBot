@@ -65,7 +65,7 @@ async def on_message(message):
 #list of stuff to do
     if message.content.startswith("!todo"):
         if str(message.author.id) == "97097796372414464":
-            msg = "'Code MusicBot auto restart command' \n 'Finish coding 10+1 scout sim' \n 'Figure out that queue thing after shuffle' \n '~~make LewdLive MusicBot~~' \n '~~Subunit autoplaylitsts~~' \n 'Make !music command better"
+            msg = "'Code MusicBot auto restart command' \n '~~Finish coding 10+1 scout sim~~(mostly)' \n `do envelope animations` \n 'Figure out that queue thing after shuffle' \n '~~make LewdLive MusicBot~~' \n '~~Subunit autoplaylitsts~~' \n 'Make !music command better"
             await client.send_message(message.channel, msg)
         else:
             msg = "You're not my Onii-chan!"
@@ -425,6 +425,7 @@ async def on_message(message):
                     cardsave = requests.get(data["card_image"], stream=True)
                     with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
                         shutil.copyfileobj(cardsave.raw, out_file)
+                    print(time.time()-start)
                 if x == 0:
                     imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(0,0))
                 elif x == 1:
