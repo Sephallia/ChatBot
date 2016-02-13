@@ -19,28 +19,27 @@ message = discord.Message()
 # datar = requests.get("http://schoolido.lu/api/cards/?page=1&page_size=1000&rarity=R").json()
 # rtotal = len(datar["results"])
 
-urcount = requests.get("http://schoolido.lu/api/cards/?rarity=UR").json()
+urcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=UR").json()
 urcounttotal = urcount["count"]
-srcount = requests.get("http://schoolido.lu/api/cards/?rarity=SR").json()
+srcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=SR").json()
 srcounttotal = srcount["count"]
-rcount = requests.get("http://schoolido.lu/api/cards/?rarity=R").json()
+rcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=R").json()
 rcounttotal = rcount["count"]
 
 urlist = list()
 srlist = list()
 rlist = list()
-for x in range(1,3):
-    dataur = requests.get("http://schoolido.lu/api/cards/?page=" + str(x) + "&page_size=100&rarity=UR").json()
-    for i in range(len(dataur["results"])):
-        urlist.append(dataur["results"][i]["id"])
+
+dataur = requests.get("http://schoolido.lu/api/cards/?page=1&is_promo=False&is_special=False&page_size=100&rarity=UR").json()
+for i in range(len(dataur["results"])):
+    urlist.append(dataur["results"][i]["id"])
 for x in range(1,4):
-    datasr = requests.get("http://schoolido.lu/api/cards/?page=" + str(x) + "&page_size=100&rarity=SR").json()
+    datasr = requests.get("http://schoolido.lu/api/cards/?page=" + str(x) + "&is_promo=False&is_special=False&page_size=100&rarity=SR").json()
     for i in range(len(datasr["results"])):
         srlist.append(datasr["results"][i]["id"])
-for x in range(1,3):
-    datar = requests.get("http://schoolido.lu/api/cards/?page=" + str(x) + "&page_size=100&rarity=R").json()
-    for i in range(len(datar["results"])):
-        rlist.append(datar["results"][i]["id"])
+datar = requests.get("http://schoolido.lu/api/cards/?page=1&is_promo=False&is_special=False&page_size=100&rarity=R").json()
+for i in range(len(datar["results"])):
+    rlist.append(datar["results"][i]["id"])
 
 @client.event
 async def on_message(message):
@@ -291,63 +290,63 @@ async def on_message(message):
         time.sleep(2)
         await client.delete_message(msg_obj)
 
-    if message.content.startswith("!fortest"):
-        if str(message.author.id) == "97097796372414464":
-            import requests
-            import shutil
-            import random
-            start = time.time()
-            imagemake = Image.new("RGBA",(2048,2160))
-            for x in range (0,11):
-                id = random.randrange(1,799,1)
-                data = requests.get("http://schoolido.lu/api/cards/" + str(id)).json()
-                imgsave = "H:\Documents\PyCharmProjects\ChatBot\Images"
-                if data["is_promo"] == False:
-                    cardsave = requests.get(data["card_image"], stream=True)
-                    with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
-                        shutil.copyfileobj(cardsave.raw, out_file)
-                    roundsave = requests.get(data["round_card_image"], stream=True)
-                    with open((os.path.join(imgsave, "round.png")),"wb") as out_file:
-                        shutil.copyfileobj(roundsave.raw, out_file)
-                elif data["is_promo"] == True:
-                    cardsave = requests.get(data["card_idolized_image"], stream=True)
-                    with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
-                        shutil.copyfileobj(cardsave.raw, out_file)
-                    roundsave = requests.get(data["round_card_idolized_image"], stream=True)
-                    with open((os.path.join(imgsave, "round.png")),"wb") as out_file:
-                        shutil.copyfileobj(roundsave.raw, out_file)
-                imagesend = os.path.join(imgsave,"merged.png")
-
-                # Working elif code.
-
-                if x == 0:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(0,0))
-                elif x == 1:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(513,0))
-                elif x == 2:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1025,0))
-                elif x == 3:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1537,0))
-                elif x == 4:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(0,721))
-                elif x == 5:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(513,721))
-                elif x == 6:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1025,721))
-                elif x == 7:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1537,721))
-                elif x == 8:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(0,1441))
-                elif x == 9:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(513,1441))
-                elif x == 10:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1025,1441))
-                    imagemake.save(imagesend)
-                    await client.send_file(message.channel, imagesend)
-                    print(time.time()-start)
-        else:
-            msg = "You're not my Onii-chan!"
-            await client.send_message(message.channel, msg)
+    # if message.content.startswith("!fortest"):
+    #     if str(message.author.id) == "97097796372414464":
+    #         import requests
+    #         import shutil
+    #         import random
+    #         start = time.time()
+    #         imagemake = Image.new("RGBA",(2048,2160))
+    #         for x in range (0,11):
+    #             id = random.randrange(1,799,1)
+    #             data = requests.get("http://schoolido.lu/api/cards/" + str(id)).json()
+    #             imgsave = "H:\Documents\PyCharmProjects\ChatBot\Images"
+    #             if data["is_promo"] == False:
+    #                 cardsave = requests.get(data["card_image"], stream=True)
+    #                 with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
+    #                     shutil.copyfileobj(cardsave.raw, out_file)
+    #                 roundsave = requests.get(data["round_card_image"], stream=True)
+    #                 with open((os.path.join(imgsave, "round.png")),"wb") as out_file:
+    #                     shutil.copyfileobj(roundsave.raw, out_file)
+    #             elif data["is_promo"] == True:
+    #                 cardsave = requests.get(data["card_idolized_image"], stream=True)
+    #                 with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
+    #                     shutil.copyfileobj(cardsave.raw, out_file)
+    #                 roundsave = requests.get(data["round_card_idolized_image"], stream=True)
+    #                 with open((os.path.join(imgsave, "round.png")),"wb") as out_file:
+    #                     shutil.copyfileobj(roundsave.raw, out_file)
+    #             imagesend = os.path.join(imgsave,"merged.png")
+    #
+    #             Working elif code.
+    #
+                # if x == 0:
+                #     imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(0,0))
+                # elif x == 1:
+                #     imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(513,0))
+                # elif x == 2:
+                #     imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1025,0))
+                # elif x == 3:
+                #     imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1537,0))
+                # elif x == 4:
+                #     imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(0,721))
+                # elif x == 5:
+                #     imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(513,721))
+                # elif x == 6:
+                #     imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1025,721))
+                # elif x == 7:
+                #     imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1537,721))
+                # elif x == 8:
+                #     imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(0,1441))
+                # elif x == 9:
+                #     imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(513,1441))
+                # elif x == 10:
+                #     imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1025,1441))
+                #     imagemake.save(imagesend)
+                #     await client.send_file(message.channel, imagesend)
+                #     print(time.time()-start)
+    #     else:
+    #         msg = "You're not my Onii-chan!"
+    #         await client.send_message(message.channel, msg)
 
     if message.content.startswith("!dictest"):
         if str(message.author.id) == "97097796372414464":
@@ -382,15 +381,67 @@ async def on_message(message):
     if message.content.startswith("!asynctest"):
         if str(message.author.id) == "97097796372414464":
             import requests
+            import shutil
             import random
             import time
             #this works for getting a card from the list now
             # cardid = urlist[random.randint(0,urcounttotal-1)]
-            # print(cardid)
+            start = time.time()
+            imagemake = Image.new("RGBA",(2048,2160))
+            imgsave = "H:\Documents\PyCharmProjects\ChatBot\Images"
+            imagesend = os.path.join(imgsave,"merged.png")
+            for x in range(11):
+                chance = random.randint(0,100)
+                if 0 <= chance <= 90:
+                    cardid = rlist[random.randint(0,rcounttotal)]
+                    print(cardid)
+                    data = requests.get("http://schoolido.lu/api/cards/" + str(cardid)).json()
+                    cardsave = requests.get(data["card_image"], stream=True)
+                    with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
+                        shutil.copyfileobj(cardsave.raw, out_file)
+                if 91 <= chance <= 99:
+                    cardid = srlist[random.randint(0,srcounttotal)]
+                    print(cardid)
+                    data = requests.get("http://schoolido.lu/api/cards/" + str(cardid)).json()
+                    cardsave = requests.get(data["card_image"], stream=True)
+                    with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
+                        shutil.copyfileobj(cardsave.raw, out_file)
+                if chance == 100:
+                    cardid = urlist[random.randint(0,urcounttotal)]
+                    print(cardid)
+                    data = requests.get("http://schoolido.lu/api/cards/" + str(cardid)).json()
+                    cardsave = requests.get(data["card_image"], stream=True)
+                    with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
+                        shutil.copyfileobj(cardsave.raw, out_file)
+                if x == 0:
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(0,0))
+                elif x == 1:
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(513,0))
+                elif x == 2:
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1025,0))
+                elif x == 3:
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1537,0))
+                elif x == 4:
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(0,721))
+                elif x == 5:
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(513,721))
+                elif x == 6:
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1025,721))
+                elif x == 7:
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1537,721))
+                elif x == 8:
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(0,1441))
+                elif x == 9:
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(513,1441))
+                elif x == 10:
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1025,1441))
+                    imagemake.save(imagesend)
+                    await client.send_file(message.channel, imagesend)
+                    print(time.time()-start)
+
         else:
             msg = "You're not my Onii-chan!"
             await client.send_message(message.channel, msg)
-
 
 
 @client.event
