@@ -19,28 +19,28 @@ message = discord.Message()
 # datar = requests.get("http://schoolido.lu/api/cards/?page=1&page_size=1000&rarity=R").json()
 # rtotal = len(datar["results"])
 
-# urcount = requests.get("http://schoolido.lu/api/cards/?rarity=UR").json()
-# urcounttotal = urcount["count"]
-# srcount = requests.get("http://schoolido.lu/api/cards/?rarity=SR").json()
-# srcounttotal = srcount["count"]
-# rcount = requests.get("http://schoolido.lu/api/cards/?rarity=R").json()
-# rcounttotal = rcount["count"]
-#
-# urlist = list()
-# srlist = list()
-# rlist = list()
-# for x in range(1,11):
-#     dataur = requests.get("http://schoolido.lu/api/cards/?page= " + str(x) + "page_size=100&rarity=UR").json()
-#     for i in range(len(dataur["results"])):
-#         urlist.append(dataur["results"][i]["id"])
-# for x in range(1,40):
-#     datasr = requests.get("http://schoolido.lu/api/cards/?page= " + str(x) + "page_size=100&rarity=SR").json()
-#     for i in range(len(datasr["results"])):
-#         srlist.append(datasr["results"][i]["id"])
-# for x in range(1,15):
-#     datar = requests.get("http://schoolido.lu/api/cards/?page= " + str(x) + "page_size=100&rarity=R").json()
-#     for i in range(len(datar["results"])):
-#         rlist.append(datar["results"][i]["id"])
+urcount = requests.get("http://schoolido.lu/api/cards/?rarity=UR").json()
+urcounttotal = urcount["count"]
+srcount = requests.get("http://schoolido.lu/api/cards/?rarity=SR").json()
+srcounttotal = srcount["count"]
+rcount = requests.get("http://schoolido.lu/api/cards/?rarity=R").json()
+rcounttotal = rcount["count"]
+
+urlist = list()
+srlist = list()
+rlist = list()
+for x in range(1,3):
+    dataur = requests.get("http://schoolido.lu/api/cards/?page=" + str(x) + "&page_size=100&rarity=UR").json()
+    for i in range(len(dataur["results"])):
+        urlist.append(dataur["results"][i]["id"])
+for x in range(1,4):
+    datasr = requests.get("http://schoolido.lu/api/cards/?page=" + str(x) + "&page_size=100&rarity=SR").json()
+    for i in range(len(datasr["results"])):
+        srlist.append(datasr["results"][i]["id"])
+for x in range(1,3):
+    datar = requests.get("http://schoolido.lu/api/cards/?page=" + str(x) + "&page_size=100&rarity=R").json()
+    for i in range(len(datar["results"])):
+        rlist.append(datar["results"][i]["id"])
 
 @client.event
 async def on_message(message):
@@ -48,12 +48,16 @@ async def on_message(message):
         return
 #test bot response, also fun stuff
     if message.content.startswith("!hello"):
-        msg = "Hello {0.author.mention} onii-sama!".format(message)
-        await client.send_message(message.channel, msg)
+        if str(message.author.id) == "97097796372414464":
+            msg = "Hello link Onii-chan!!"
+            await client.send_message(message.channel, msg)
+        else:
+            msg = "Hello {0.author.mention} onii-sama!".format(message)
+            await client.send_message(message.channel, msg)
 
 #list of commands here
     if message.content.startswith("!lolibothelp"):
-        msg = "`!hello - greets you`\n`!songhelp - list of singles to queue`"
+        msg = "`!hello - greets you`\n`!songhelp - list of songs to queue`"
         await client.send_message(message.channel, msg)
 #songlist
     if message.content.startswith("!songhelp"):
@@ -279,6 +283,7 @@ async def on_message(message):
         time.sleep(3)
         await client.delete_message(msg_obj)
 
+        #Istudemo (✿◠‿◠) 〜ITSUDEMO (✿◠‿◠) 〜
     if message.content.startswith("!itsudemo"):
         import time
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01.%20%E6%B0%B8%E9%81%A0%E3%83%95%E3%83%AC%E3%83%B3%E3%82%BA%28Printemps%29.mp3"
@@ -379,14 +384,13 @@ async def on_message(message):
             import requests
             import random
             import time
-            start = time.time()
-            # for x in range(3):
-            #     id = dataur["results"][random.randint(0,len(results)-1)]["id"]
-            #     print(id)
-            #     print(time.time()-start)
+            #this works for getting a card from the list now
+            # cardid = urlist[random.randint(0,urcounttotal-1)]
+            # print(cardid)
         else:
             msg = "You're not my Onii-chan!"
             await client.send_message(message.channel, msg)
+
 
 
 @client.event
