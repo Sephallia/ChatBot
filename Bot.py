@@ -60,7 +60,7 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
 #songlist
     if message.content.startswith("!songhelp"):
-        msg = "`!hearttoheart - Queues Heart to Heart`\n`!waowao - Queues WAO-WAO Powerful Day!`\n`!omoide - Queues 思い出以上になりたくて`\n`!sakkaku - Queues 錯覚CROSSROADS`\n`!angelic - Queues Angelic Angel`\n`!sunnydaysong - Queues Sunny Day Song`\n`!yumenotobira - Queues Yume no Tobira`\n`!imas1 - Queues some IM@S CG songs`\n`!imas2 - Queues some different IM@S CG songs`\n`!itsudemo - Queues (✿◠‿◠) 〜ITSUDEMO (✿◠‿◠) 〜`"
+        msg = "`!hearttoheart - Queues Heart to Heart`\n`!waowao - Queues WAO-WAO Powerful Day!`\n`!omoide - Queues 思い出以上になりたくて`\n`!sakkaku - Queues 錯覚CROSSROADS`\n`!angelic - Queues Angelic Angel`\n`!sunnydaysong - Queues Sunny Day Song`\n`!yumenotobira - Queues Yume no Tobira`\n`!imas1 - Queues some IM@S CG songs`\n`!imas2 - Queues some different IM@S CG songs`\n`!itsudemo - Queues (✿◠‿◠) 〜ITSUDEMO (✿◠‿◠) 〜`\n`!psychicfire - Queues PSYCHIC FIRE`\n`!brainpower - Queues Brainpower!`\n`!shunjou - Queues 春情ロマンティック`"
         await client.send_message(message.channel, msg)
 #list of stuff to do
     if message.content.startswith("!todo"):
@@ -290,6 +290,30 @@ async def on_message(message):
         time.sleep(2)
         await client.delete_message(msg_obj)
 
+        #Psychic Fire
+    if message.content.startswith("!psychicfire"):
+        import time
+        msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/2%20PSYCHIC%20FIRE.mp3"
+        msg_obj = await client.send_message(message.channel, msg)
+        time.sleep(3)
+        await client.delete_message(msg_obj)
+
+        #Brainpower
+    if message.content.startswith("!brainpower"):
+        import time
+        msg = "https://www.youtube.com/watch?v=9R8aSKwTEMg"
+        msg_obj = await client.send_message(message.channel, msg)
+        time.sleep(10)
+        await client.delete_message(msg_obj)
+
+        #Shunjou Romantic
+    if message.content.startswith("!shunjou"):
+        import time
+        msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20%E6%98%A5%E6%83%85%E3%83%AD%E3%83%9E%E3%83%B3%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%28LilyWhite%29.mp3"
+        msg_obj = await client.send_message(message.channel, msg)
+        time.sleep(3)
+        await client.delete_message(msg_obj)
+
     # if message.content.startswith("!fortest"):
     #     if str(message.author.id) == "97097796372414464":
     #         import requests
@@ -391,18 +415,18 @@ async def on_message(message):
             imgsave = "H:\Documents\PyCharmProjects\ChatBot\Images"
             imagesend = os.path.join(imgsave,"merged.png")
             imgmergedsend =os.path.join(imgsave,"merged2.png")
+            notr = 0
             for x in range(11):
                 if 0 <= x <= 9:
-                    notr = 0
                     chance = random.randint(0,100)
-                    if 0 <= chance <= 97:
-                        cardid = rlist[random.randint(0,rcounttotal)]
+                    if 0 <= chance <= 90:
+                        cardid = rlist[random.randint(0,rcounttotal-1)]
                         print(cardid)
                         data = requests.get("http://schoolido.lu/api/cards/" + str(cardid)).json()
                         cardsave = requests.get(data["card_image"], stream=True)
                         with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
                             shutil.copyfileobj(cardsave.raw, out_file)
-                    if 98 <= chance <= 99:
+                    if 91 <= chance <= 99:
                         cardid = srlist[random.randint(0,srcounttotal)]
                         print(cardid)
                         data = requests.get("http://schoolido.lu/api/cards/" + str(cardid)).json()
@@ -420,6 +444,13 @@ async def on_message(message):
                         notr = notr + 1
                 elif notr == 0:
                     cardid = srlist[random.randint(0,srcounttotal)]
+                    print(cardid)
+                    data = requests.get("http://schoolido.lu/api/cards/" + str(cardid)).json()
+                    cardsave = requests.get(data["card_image"], stream=True)
+                    with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
+                        shutil.copyfileobj(cardsave.raw, out_file)
+                elif notr > 0:
+                    cardid = rlist[random.randint(0,rcounttotal)]
                     print(cardid)
                     data = requests.get("http://schoolido.lu/api/cards/" + str(cardid)).json()
                     cardsave = requests.get(data["card_image"], stream=True)
@@ -452,8 +483,11 @@ async def on_message(message):
                     imageresize = Image.open(imagesend)
                     imagesend = imageresize.resize((1024,1080))
                     imagesend.save(imgmergedsend)
+                    # msg = "{0.author.mention}, here's your scout".format(message)
+                    # await client.send_message(message.channel, msg)
                     await client.send_file(message.channel, imgmergedsend)
                     print(time.time()-start)
+                    print(notr)
 
         else:
             msg = "You're not my Onii-chan!"
