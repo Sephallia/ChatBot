@@ -1,13 +1,8 @@
 from __future__ import print_function
-from Download import download
-from Download import testloop
 import discord
 import os
 import json
 import requests
-import aiohttp
-import asyncio
-import itertools
 from PIL import Image
 
 
@@ -38,24 +33,6 @@ message = discord.Message()
 # for i in range(len(datar["results"])):
 #     rlist.append(datar["results"][i]["id"])
 
-# async def download(url, parts):
-#     async def get_partial_content(u, i, start, end):
-#         print(i, start, end)
-#         async with aiohttp.get(
-#                 u, headers={"Range": "bytes={}-{}".format(start, end - 1 if end else "")}) as _resp:
-#             return i, await _resp.read()
-#
-#     async with aiohttp.head(url) as resp:
-#         size = int(resp.headers["Content-Length"])
-#
-#     ranges = list(range(0, size, size // parts))
-#
-#     res, _ = await asyncio.wait(
-#         [get_partial_content(url, i, start, end) for i, (start, end) in
-#          enumerate(itertools.zip_longest(ranges, ranges[1:], fillvalue=""))])
-#
-#     sorted_result = sorted(task.result() for task in res)
-#     return b"".join(data for _, data in sorted_result)
 
 @client.event
 async def on_message(message):
@@ -394,7 +371,7 @@ async def on_message(message):
         await client.delete_message(msg_obj)
 
         #feels
-    if message.content.startswith("!feels"):
+    if message.content == "!feels":
         import time
         msg = "!play https://www.youtube.com/watch?v=VilL2kOF8NU"
         msg_obj = await client.send_message(message.channel, msg)
@@ -415,8 +392,6 @@ async def on_message(message):
     if message.content.startswith("!asynctest"):
         if str(message.author.id) == "97097796372414464":
             import aiohttp
-            import asyncio
-            import shutil
             import random
             import time
             start = time.time()
@@ -434,18 +409,22 @@ async def on_message(message):
                         with aiohttp.ClientSession() as session:
                             async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
                                 data = await resp.json()
-                                cardsave = session.get(data["card_image"], stream=True)
-                                with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
-                                    shutil.copyfileobj(cardsave.raw, out_file)
+                                card = data["card_image"]
+                                async with session.get(card) as resp2:
+                                    test = await resp2.read()
+                                    with open("card.png", "wb") as f:
+                                        f.write(test)
                     if 91 <= chance <= 99:
                         cardid = srlist[random.randint(0,srcounttotal)]
                         print(cardid)
                         with aiohttp.ClientSession() as session:
                             async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
                                 data = await resp.json()
-                                cardsave = session.get(data["card_image"], stream=True)
-                                with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
-                                    shutil.copyfileobj(cardsave.raw, out_file)
+                                card = data["card_image"]
+                                async with session.get(card) as resp2:
+                                    test = await resp2.read()
+                                    with open("card.png", "wb") as f:
+                                        f.write(test)
                         notr = notr + 1
                     if chance == 100:
                         cardid = urlist[random.randint(0,urcounttotal)]
@@ -453,9 +432,11 @@ async def on_message(message):
                         with aiohttp.ClientSession() as session:
                             async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
                                 data = await resp.json()
-                                cardsave = session.get(data["card_image"], stream=True)
-                                with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
-                                    shutil.copyfileobj(cardsave.raw, out_file)
+                                card = data["card_image"]
+                                async with session.get(card) as resp2:
+                                    test = await resp2.read()
+                                    with open("card.png", "wb") as f:
+                                        f.write(test)
                         notr = notr + 1
                 elif notr == 0:
                     cardid = srlist[random.randint(0,srcounttotal)]
@@ -463,18 +444,22 @@ async def on_message(message):
                     with aiohttp.ClientSession() as session:
                             async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
                                 data = await resp.json()
-                                cardsave = session.get(data["card_image"], stream=True)
-                                with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
-                                    shutil.copyfileobj(cardsave.raw, out_file)
+                                card = data["card_image"]
+                                async with session.get(card) as resp2:
+                                    test = await resp2.read()
+                                    with open("card.png", "wb") as f:
+                                        f.write(test)
                 elif notr > 0:
                     cardid = rlist[random.randint(0,rcounttotal)]
                     print(cardid)
                     with aiohttp.ClientSession() as session:
                             async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
                                 data = await resp.json()
-                                cardsave = session.get(data["card_image"], stream=True)
-                                with open((os.path.join(imgsave, "card.png")),"wb") as out_file:
-                                    shutil.copyfileobj(cardsave.raw, out_file)
+                                card = data["card_image"]
+                                async with session.get(card) as resp2:
+                                    test = await resp2.read()
+                                    with open("card.png", "wb") as f:
+                                        f.write(test)
                     print(time.time()-start)
                 if x == 0:
                     imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(0,0))
@@ -502,8 +487,6 @@ async def on_message(message):
                     imageresize = Image.open(imagesend)
                     imagesend = imageresize.resize((1024,1080))
                     imagesend.save(imgmergedsend)
-                    # msg = "{0.author.mention}, here's your scout".format(message)
-                    # await client.send_message(message.channel, msg)
                     await client.send_file(message.channel, imgmergedsend)
                     print(time.time()-start)
                     print(notr)
@@ -512,29 +495,19 @@ async def on_message(message):
             msg = "You're not my Onii-chan!"
             await client.send_message(message.channel, msg)
 
-    if message.content.startswith("!async"):
-        if str(message.author.id) == "97097796372414464":
-            import aiohttp
-            import random
-            import time
-            import shutil
-            import asyncio
-            start = time.time()
-            notr = 0
-            imagemake = Image.new("RGBA",(2048,2160))
-            imgsave = "H:\Documents\PyCharmProjects\ChatBot\Images"
-            imagesend = os.path.join(imgsave,"merged.png")
-            imgmergedsend =os.path.join(imgsave,"merged2.png")
-            with aiohttp.ClientSession() as session:
-                async with session.get("http://schoolido.lu/api/cards/788") as resp:
-                    data = await resp.json()
-        else:
-            msg = "You're not my Onii-chan!"
-            await client.send_message(message.channel, msg)
 
+    #working async download
     if message.content.startswith("!async2"):
-        image_url = "http://i.schoolido.lu/cards/28Honoka.png"
-        await testloop(image_url)
+        import aiohttp
+        with aiohttp.ClientSession() as session:
+            async with session.get("http://schoolido.lu/api/cards/788/") as resp:
+                data = await resp.json()
+                card = data["card_image"]
+                async with session.get(card) as resp2:
+                    test = await resp2.read()
+                    with open("cardtest2.png", "wb") as f:
+                        f.write(test)
+
 
 
 #client.change_status(game=discord.Game(name="your custom game here"))
