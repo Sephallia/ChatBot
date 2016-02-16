@@ -66,75 +66,75 @@ async def on_message(message):
 
 #Set some music, only if it is link2110 sending commands
     if message.content.startswith("!music"):
-        import time
+        import asyncio
         if str(message.author.id) == "97097796372414464":
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01.%20Angelic%20Angel.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01.%20HEART%20to%20HEART%21.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01.%20SUNNY%20DAY%20SONG.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01.%20WAO-WAO%20Powerful%20day%21.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01.%20%E6%80%9D%E3%81%84%E5%87%BA%E4%BB%A5%E4%B8%8A%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%9F%E3%81%8F%E3%81%A6%28LilyWhite%29.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/1%20%E9%8C%AF%E8%A6%9ACROSSROADS.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02%20Happy%20maker%21.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20%EF%BC%9F%E2%86%90HEARTBEAT.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20Future%20style.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20Hello%2C%E6%98%9F%E3%82%92%E6%95%B0%E3%81%88%E3%81%A6.mp3"
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20NO%20EXIT%20ORION.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20%E5%B5%90%E3%81%AE%E3%81%AA%E3%81%8B%E3%81%AE%E6%81%8B%E3%81%A0%E3%81%8B%E3%82%89%28muse%29.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
-            msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20%E6%98%A5%E6%83%85%E3%83%AD%E3%83%9E%E3%83%B3%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%28LilyWhite%29.mp3".format(message)
+            msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20%E6%98%A5%E6%83%85%E3%83%AD%E3%83%9E%E3%83%B3%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%28LilyWhite2%29.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/2%20PSYCHIC%20FIRE.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01%20%E5%90%9B%E3%81%AE%E3%81%93%E3%81%93%E3%82%8D%E3%81%AF%E8%BC%9D%E3%81%84%E3%81%A6%E3%82%8B%E3%81%8B%E3%81%84%EF%BC%9F%28Aqours%29.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02%20%EF%BC%B3%EF%BD%94%EF%BD%85%EF%BD%90%EF%BC%81%EF%BC%BA%EF%BC%A5%EF%BC%B2%EF%BC%AF%E3%80%80%EF%BD%94%EF%BD%8F%E3%80%80%EF%BC%AF%EF%BC%AE%EF%BC%A5%28Aqours%29.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
             msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/03%20%EF%BC%A1%EF%BD%91%EF%BD%8F%EF%BD%95%EF%BD%92%EF%BD%93%E2%98%86%EF%BC%A8%EF%BC%A5%EF%BC%B2%EF%BC%AF%EF%BC%A5%EF%BC%B3%28Aqours%29.mp3".format(message)
             msg_obj = await client.send_message(message.channel, msg)
-            time.sleep(3)
+            asyncio.sleep(3)
             await client.delete_message(msg_obj)
 #otherwise refuse
         else:
@@ -145,174 +145,174 @@ async def on_message(message):
 
         #Heart to Heart
     if message.content.startswith("!hearttoheart"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01.%20HEART%20to%20HEART%21.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20%E5%B5%90%E3%81%AE%E3%81%AA%E3%81%8B%E3%81%AE%E6%81%8B%E3%81%A0%E3%81%8B%E3%82%89%28muse%29.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #WAO-WAO Powerful Day
     if message.content.startswith("!waowao"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01.%20WAO-WAO%20Powerful%20day%21.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20NO%20EXIT%20ORION.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #LilyWhite Omoide Ijou ni Naritakute
     if message.content.startswith("!omoide"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01.%20%E6%80%9D%E3%81%84%E5%87%BA%E4%BB%A5%E4%B8%8A%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%9F%E3%81%8F%E3%81%A6%28LilyWhite%29.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20%E6%98%A5%E6%83%85%E3%83%AD%E3%83%9E%E3%83%B3%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%28LilyWhite%29.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #Sakkaku Crossroads
     if message.content.startswith("!sakkaku"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/1%20%E9%8C%AF%E8%A6%9ACROSSROADS.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/2%20PSYCHIC%20FIRE.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #Angelic Angel
     if message.content.startswith("!angelic"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01.%20Angelic%20Angel.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20Hello%2C%E6%98%9F%E3%82%92%E6%95%B0%E3%81%88%E3%81%A6.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #SunnyDaySong
     if message.content.startswith("!sunnydaysong"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01.%20SUNNY%20DAY%20SONG.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20%EF%BC%9F%E2%86%90HEARTBEAT.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #Yume no Tobira
     if message.content.startswith("!yumenotobira"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01%20Yume%20no%20Tobira.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02%20SENTIMENTAL%20StepS.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #IM@S #1
     if message.content == ("!imas1"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%201/01.%20Shine%21%21.m4a"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%201/02.%20Never%20say%20never%20%7EFor%20Anastasia%20rearrange%20MIX%7E.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%201/02.%20S%28mile%29ING%21%20%7EFor%20Rin%20rearranged%20MIX%7E.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%201/03.%20%23U30df%23U30c4%23U30dc%23U30b7%23U2606%23U2606%23U2605%20%7EFor%20Minami%20rearrange%20MIX%7E.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%201/03.%20%E6%82%B2%E3%81%97%E3%81%BF%E3%82%92%E3%82%84%E3%81%95%E3%81%97%E3%81%95%E3%81%AB%28im%40s1%29.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #IM@S #2
     if message.content == ("!imas2"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%202/01%20Anzu%20no%20Uta.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%202/01%20GOIN_%21%21%21.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%202/01.%20Trancing%20Pulse.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%202/02.%20dokxswzi%20-LOVE%20LAIKA%20qfdjt-.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/IM%40S/iM%40S%202/06%20Memories.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #Istudemo (✿◠‿◠) 〜ITSUDEMO (✿◠‿◠) 〜
     if message.content.startswith("!itsudemo"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01.%20%E6%B0%B8%E9%81%A0%E3%83%95%E3%83%AC%E3%83%B3%E3%82%BA%28Printemps%29.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(2)
+        asyncio.sleep(2)
         await client.delete_message(msg_obj)
 
         #Psychic Fire
     if message.content.startswith("!psychicfire"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/2%20PSYCHIC%20FIRE.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #Brainpower
     if message.content.startswith("!brainpower"):
-        import time
+        import asyncio
         msg = "https://www.youtube.com/watch?v=9R8aSKwTEMg"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(5)
+        asyncio.sleep(5)
         await client.delete_message(msg_obj)
 
         #Shunjou Romantic
     if message.content.startswith("!shunjou"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20%E6%98%A5%E6%83%85%E3%83%AD%E3%83%9E%E3%83%B3%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%28LilyWhite2%29.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #Final Single
     if message.content.startswith("!finalsingle"):
-        import time
+        import asyncio
         msg = "!play https://www.youtube.com/watch?v=VilL2kOF8NU"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #CantoBoyz
@@ -322,70 +322,70 @@ async def on_message(message):
 
         #Korekara
     if message.content.startswith("!korekara"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89%28muse2%29.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #BokuTachi
     if message.content.startswith("!bokutachi"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/BokuHika.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #Storm in Lover
     if message.content.startswith("!storminlover"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/Storm_in_Lover.ogg"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #Magnetic
     if message.content.startswith("!magnetic"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/Zurui_yo_Magnetic_today.ogg"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #Aqours
     if message.content.startswith("!aqours"):
-        import time
+        import asyncio
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01%20%E5%90%9B%E3%81%AE%E3%81%93%E3%81%93%E3%82%8D%E3%81%AF%E8%BC%9D%E3%81%84%E3%81%A6%E3%82%8B%E3%81%8B%E3%81%84%EF%BC%9F%28Aqours%29.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02%20%EF%BC%B3%EF%BD%94%EF%BD%85%EF%BD%90%EF%BC%81%EF%BC%BA%EF%BC%A5%EF%BC%B2%EF%BC%AF%E3%80%80%EF%BD%94%EF%BD%8F%E3%80%80%EF%BC%AF%EF%BC%AE%EF%BC%A5%28Aqours%29.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/03%20%EF%BC%A1%EF%BD%91%EF%BD%8F%EF%BD%95%EF%BD%92%EF%BD%93%E2%98%86%EF%BC%A8%EF%BC%A5%EF%BC%B2%EF%BC%AF%EF%BC%A5%EF%BC%B3%28Aqours%29.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         #feels
     if message.content == "!feels":
-        import time
+        import asyncio
         msg = "!play https://www.youtube.com/watch?v=VilL2kOF8NU"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89%28muse2%29.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/BokuHika.mp3"
         msg_obj = await client.send_message(message.channel, msg)
-        time.sleep(3)
+        asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
 
