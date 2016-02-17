@@ -11,27 +11,27 @@ client = discord.Client()
 user = discord.User()
 message = discord.Message()
 
-# urcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=UR").json()
-# urcounttotal = urcount["count"]
-# srcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=SR").json()
-# srcounttotal = srcount["count"]
-# rcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=R").json()
-# rcounttotal = rcount["count"]
-#
-# urlist = list()
-# srlist = list()
-# rlist = list()
-#
-# dataur = requests.get("http://schoolido.lu/api/cards/?page=1&is_promo=False&is_special=False&page_size=100&rarity=UR").json()
-# for i in range(len(dataur["results"])):
-#     urlist.append(dataur["results"][i]["id"])
-# for x in range(1,4):
-#     datasr = requests.get("http://schoolido.lu/api/cards/?page=" + str(x) + "&is_promo=False&is_special=False&page_size=100&rarity=SR").json()
-#     for i in range(len(datasr["results"])):
-#         srlist.append(datasr["results"][i]["id"])
-# datar = requests.get("http://schoolido.lu/api/cards/?page=1&is_promo=False&is_special=False&page_size=100&rarity=R").json()
-# for i in range(len(datar["results"])):
-#     rlist.append(datar["results"][i]["id"])
+urcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=UR").json()
+urcounttotal = urcount["count"]
+srcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=SR").json()
+srcounttotal = srcount["count"]
+rcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=R").json()
+rcounttotal = rcount["count"]
+
+urlist = list()
+srlist = list()
+rlist = list()
+
+dataur = requests.get("http://schoolido.lu/api/cards/?page=1&is_promo=False&is_special=False&page_size=100&rarity=UR").json()
+for i in range(len(dataur["results"])):
+    urlist.append(dataur["results"][i]["id"])
+for x in range(1,4):
+    datasr = requests.get("http://schoolido.lu/api/cards/?page=" + str(x) + "&is_promo=False&is_special=False&page_size=100&rarity=SR").json()
+    for i in range(len(datasr["results"])):
+        srlist.append(datasr["results"][i]["id"])
+datar = requests.get("http://schoolido.lu/api/cards/?page=1&is_promo=False&is_special=False&page_size=100&rarity=R").json()
+for i in range(len(datar["results"])):
+    rlist.append(datar["results"][i]["id"])
 
 
 @client.event
@@ -49,7 +49,7 @@ async def on_message(message):
 
 #list of commands here
     if message.content.startswith("!lolibothelp"):
-        msg = "`!hello - greets you`\n`!songhelp - list of songs to queue`"
+        msg = "`Hi! I'm a bot made by link2110 to queue music and other things! Here are my commands:`\n`!hello - greets you`\n`!songhelp - list of songs to queue`\n`!scouttest - scouts 10+1 guaranteed SR/UR. May be slow, please wait.`\n`!textscout - Scouts 10+1 guaranteed SR/UR in text form`"
         await client.send_message(message.channel, msg)
 #songlist
     if message.content.startswith("!songhelp"):
@@ -389,18 +389,20 @@ async def on_message(message):
         await client.delete_message(msg_obj)
 
 
-    if message.content.startswith("!asynctest"):
-        if str(message.author.id) == "97097796372414464":
+    if message.content.startswith("!scouttest"):
+        # if str(message.author.id) == "97097796372414464":
             import aiohttp
+            import asyncio
             import random
             import time
             start = time.time()
             imagemake = Image.new("RGBA",(2048,2160))
-            imgsave = "H:\Documents\PyCharmProjects\ChatBot\Images"
+            imgsave = "H:\Documents\PyCharmProjects\ChatBot"
             imagesend = os.path.join(imgsave,"merged.png")
             imgmergedsend =os.path.join(imgsave,"merged2.png")
             notr = 0
             for x in range(11):
+            # draw 10 cards with the chances for R/SR/UR at 90/9/1%
                 if 0 <= x <= 9:
                     chance = random.randint(0,100)
                     if 0 <= chance <= 90:
@@ -412,7 +414,7 @@ async def on_message(message):
                                 card = data["card_image"]
                                 async with session.get(card) as resp2:
                                     test = await resp2.read()
-                                    with open("card.png", "wb") as f:
+                                    with open("card" + str(x) + ".png", "wb") as f:
                                         f.write(test)
                     if 91 <= chance <= 99:
                         cardid = srlist[random.randint(0,srcounttotal)]
@@ -423,7 +425,7 @@ async def on_message(message):
                                 card = data["card_image"]
                                 async with session.get(card) as resp2:
                                     test = await resp2.read()
-                                    with open("card.png", "wb") as f:
+                                    with open("card" + str(x) + ".png", "wb") as f:
                                         f.write(test)
                         notr = notr + 1
                     if chance == 100:
@@ -435,54 +437,95 @@ async def on_message(message):
                                 card = data["card_image"]
                                 async with session.get(card) as resp2:
                                     test = await resp2.read()
-                                    with open("card.png", "wb") as f:
+                                    with open("card" + str(x) + ".png", "wb") as f:
                                         f.write(test)
                         notr = notr + 1
+            #if no SR/UR in first 10, then give 90/10% chance of SR/UR
                 elif notr == 0:
-                    cardid = srlist[random.randint(0,srcounttotal)]
-                    print(cardid)
-                    with aiohttp.ClientSession() as session:
+                    chance3 = random.randint(0,100)
+                    if 0 <= chance3 <= 90:
+                        cardid = srlist[random.randint(0,srcounttotal)]
+                        print(cardid)
+                        with aiohttp.ClientSession() as session:
                             async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
                                 data = await resp.json()
                                 card = data["card_image"]
                                 async with session.get(card) as resp2:
                                     test = await resp2.read()
-                                    with open("card.png", "wb") as f:
+                                    with open("card" + str(x) + ".png", "wb") as f:
                                         f.write(test)
-                elif notr > 0:
-                    cardid = rlist[random.randint(0,rcounttotal)]
-                    print(cardid)
-                    with aiohttp.ClientSession() as session:
+                        notr = notr + 1
+                    if 91 <= chance3 <= 100:
+                        cardid = urlist[random.randint(0,urcounttotal)]
+                        print(cardid)
+                        with aiohttp.ClientSession() as session:
                             async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
                                 data = await resp.json()
                                 card = data["card_image"]
                                 async with session.get(card) as resp2:
                                     test = await resp2.read()
-                                    with open("card.png", "wb") as f:
+                                    with open("card" + str(x) + ".png", "wb") as f:
+                                        f.write(test)
+            #if at least 1 SR/UR in first 10, then draw normal chance for last card
+                elif notr > 0:
+                    chance1 = random.randint(0,100)
+                    if 0 <= chance1 <= 90:
+                        cardid = rlist[random.randint(0,rcounttotal-1)]
+                        print(cardid)
+                        with aiohttp.ClientSession() as session:
+                            async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
+                                data = await resp.json()
+                                card = data["card_image"]
+                                async with session.get(card) as resp2:
+                                    test = await resp2.read()
+                                    with open("card" + str(x) + ".png", "wb") as f:
+                                        f.write(test)
+                    if 91 <= chance1 <= 99:
+                        cardid = srlist[random.randint(0,srcounttotal)]
+                        print(cardid)
+                        with aiohttp.ClientSession() as session:
+                            async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
+                                data = await resp.json()
+                                card = data["card_image"]
+                                async with session.get(card) as resp2:
+                                    test = await resp2.read()
+                                    with open("card" + str(x) + ".png", "wb") as f:
+                                        f.write(test)
+                        notr = notr + 1
+                    if chance1 == 100:
+                        cardid = urlist[random.randint(0,urcounttotal)]
+                        print(cardid)
+                        with aiohttp.ClientSession() as session:
+                            async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
+                                data = await resp.json()
+                                card = data["card_image"]
+                                async with session.get(card) as resp2:
+                                    test = await resp2.read()
+                                    with open("card" + str(x) + ".png", "wb") as f:
                                         f.write(test)
                     print(time.time()-start)
                 if x == 0:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(0,0))
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card0.png")),(0,0))
                 elif x == 1:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(513,0))
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card1.png")),(513,0))
                 elif x == 2:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1025,0))
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card2.png")),(1025,0))
                 elif x == 3:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1537,0))
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card3.png")),(1537,0))
                 elif x == 4:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(0,721))
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card4.png")),(0,721))
                 elif x == 5:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(513,721))
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card5.png")),(513,721))
                 elif x == 6:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1025,721))
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card6.png")),(1025,721))
                 elif x == 7:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1537,721))
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card7.png")),(1537,721))
                 elif x == 8:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(0,1441))
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card8.png")),(0,1441))
                 elif x == 9:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(513,1441))
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card9.png")),(513,1441))
                 elif x == 10:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card.png")),(1025,1441))
+                    imagemake.paste(Image.open(os.path.join(imgsave,"card10.png")),(1025,1441))
                     imagemake.save(imagesend)
                     imageresize = Image.open(imagesend)
                     imagesend = imageresize.resize((1024,1080))
@@ -491,9 +534,9 @@ async def on_message(message):
                     print(time.time()-start)
                     print(notr)
 
-        else:
-            msg = "You're not my Onii-chan!"
-            await client.send_message(message.channel, msg)
+        # else:
+        #     msg = "You're not my Onii-chan!"
+        #     await client.send_message(message.channel, msg)
 
 
     #working async download
@@ -507,6 +550,93 @@ async def on_message(message):
                     test = await resp2.read()
                     with open("cardtest2.png", "wb") as f:
                         f.write(test)
+
+    if message.content.startswith("!textscout"):
+        import random
+        rare = 0
+        superrare = 0
+        ultrarare = 0
+        notrare = 0
+        for x in range(11):
+            chance = random.randint(0,100)
+            if 0 <= x <= 9:
+                if 0 <= chance <= 90:
+                    rare += 1
+                if 91 <= chance <= 99:
+                    superrare += 1
+                    notrare += 1
+                if chance == 100:
+                    ultrarare += 1
+                    notrare += 1
+            elif notrare == 0:
+                chance2 = random.randint(0,100)
+                if 0 <= chance2 <= 90:
+                    superrare += 1
+                if 91 <= chance2 <= 100:
+                    ultrarare += 1
+            elif notrare > 0:
+                if 0 <= chance <= 90:
+                    rare += 1
+                if 91 <= chance <= 99:
+                    superrare += 1
+                    notrare += 1
+                if chance == 100:
+                    ultrarare += 1
+                    notrare += 1
+        msg = "You scouted " + str(rare) + " R's, " + str(superrare) + " SR's, and " + str(ultrarare) + " UR's."
+        await client.send_message(message.channel, msg)
+
+    if message.content.startswith("!chance2test"):
+        # if message.author.id == "97097796372414464":
+            import random
+            rare = 0
+            superrare = 0
+            ultrarare = 0
+            notrare = 0
+            for y in range (1000):
+                for x in range(11):
+                    chance = random.randint(0,100)
+                    if 0 <= x <= 9:
+                        if 0 <= chance <= 90:
+                            rare += 1
+                        if 91 <= chance <= 99:
+                            superrare += 1
+                            notrare += 1
+                        if chance == 100:
+                            ultrarare += 1
+                            notrare += 1
+                    elif notrare == 0:
+                        chance2 = random.randint(0,100)
+                        if 0 <= chance2 <= 90:
+                            superrare += 1
+                        if 91 <= chance2 <= 100:
+                            ultrarare += 1
+                    elif notrare > 0:
+                        if 0 <= chance <= 90:
+                            rare += 1
+                        if 91 <= chance <= 99:
+                            superrare += 1
+                            notrare += 1
+                        if chance == 100:
+                            ultrarare += 1
+                            notrare += 1
+            rarepercent = (rare / 11000) * 100
+            srpercent = (superrare / 11000) * 100
+            urpercent = (ultrarare / 11000) * 100
+            msg = "The percentage of your scouts is: " + str(rarepercent) + "% R's, " + str(srpercent) + "% SR's and " + str(urpercent) + "% UR's"
+            await client.send_message(message.channel, msg)
+
+        # else:
+        #     msg = "You're not my Onii-chan!"
+        #     await client.send_message(message.channel, msg)
+
+    if message.content.startswith("!asynctest"):
+        if message.author.id == "98528499408576512":
+            msg = "Fuk you {0.author.mention}".format(message)
+            await client.send_message(message.channel, msg)
+        else:
+            msg = "This command is dead, use !scouttest"
+            await client.send_message(message.channel, msg)
 
 
 
