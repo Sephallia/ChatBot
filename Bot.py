@@ -25,7 +25,7 @@ rlist = list()
 dataur = requests.get("http://schoolido.lu/api/cards/?page=1&is_promo=False&is_special=False&page_size=100&rarity=UR").json()
 for i in range(len(dataur["results"])):
     urlist.append(dataur["results"][i]["id"])
-for x in range(1,4):
+for x in range(1,5):
     datasr = requests.get("http://schoolido.lu/api/cards/?page=" + str(x) + "&is_promo=False&is_special=False&page_size=100&rarity=SR").json()
     for i in range(len(datasr["results"])):
         srlist.append(datasr["results"][i]["id"])
@@ -48,9 +48,15 @@ async def on_message(message):
             await client.send_message(message.channel, msg)
 
 #list of commands here
-    if message.content.startswith("!lolibothelp"):
-        msg = "`Hi! I'm a bot made by link2110 to queue music and other things! Here are my commands:`\n`!hello - greets you`\n`!songhelp - list of songs to queue`\n`!scouttest - scouts 10+1 guaranteed SR/UR. May be slow, please wait.`\n`!textscout - Scouts 10+1 guaranteed SR/UR in text form`"
-        await client.send_message(message.channel, msg)
+    if client.user in message.mentions:
+        import time
+        if message.author.id == "139966249248489472":
+            return
+        else:
+            msg_obj = "`Hi! I'm a bot made by link2110 to queue music and other things! Here are my commands:`\n`!hello - greets you`\n`!songhelp - list of songs to queue`\n`!scout11 - scouts 10+1 guaranteed SR/UR. May be slow, please wait.`\n`!textscout - Scouts 10+1 guaranteed SR/UR in text form`"
+            await client.send_message(message.channel, msg_obj)
+            time.sleep(5)
+            await client.delete_message(msg_obj)
 #songlist
     if message.content.startswith("!songhelp"):
         msg = "`!hearttoheart - Queues Heart to Heart(full single)`\n`!waowao - Queues WAO-WAO Powerful Day!(full single)`\n`!omoide - Queues 思い出以上になりたくて(full single)`\n`!sakkaku - Queues 錯覚CROSSROADS(full single)`\n`!angelic - Queues Angelic Angel(full single)`\n`!sunnydaysong - Queues Sunny Day Song(full single)`\n`!yumenotobira - Queues Yume no Tobira(full single)`\n`!aqours - Queues 君のこころは輝いてるかい？(3songs)`\n`!imas1 - Queues some IM@S CG songs(5songs)`\n`!imas2 - Queues some different IM@S CG songs(5songs)`\n`!itsudemo - Queues (✿◠‿◠) 〜ITSUDEMO (✿◠‿◠) 〜(1song)`\n`!psychicfire - Queues PSYCHIC FIRE(1song)`\n`!brainpower - Lists Brainpower!`\n`!shunjou - Queues 春情ロマンティック(1song)`\n`!korekara - Queues これから(1song)`\n`!bokuhika - Queues 僕たちはひとつの光(1song)`\n`!storminlover - Queues Storm in Lover(1song)`\n`!magnetic - Queues ずるいよMagnetic Today(1song)`\n`!feels - ;-;`"
@@ -389,7 +395,7 @@ async def on_message(message):
         await client.delete_message(msg_obj)
 
 
-    if message.content.startswith("!scouttest"):
+    if message.content.startswith("!scout11"):
         # if str(message.author.id) == "97097796372414464":
             import aiohttp
             import asyncio
