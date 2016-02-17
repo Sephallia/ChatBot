@@ -401,6 +401,9 @@ async def on_message(message):
             imagesend = os.path.join(imgsave,"merged.png")
             imgmergedsend =os.path.join(imgsave,"merged2.png")
             notr = 0
+            rare = 0
+            sr = 0
+            ur = 0
             for x in range(11):
             # draw 10 cards with the chances for R/SR/UR at 90/9/1%
                 if 0 <= x <= 9:
@@ -416,6 +419,7 @@ async def on_message(message):
                                     test = await resp2.read()
                                     with open("card" + str(x) + ".png", "wb") as f:
                                         f.write(test)
+                        rare += 1
                     if 91 <= chance <= 99:
                         cardid = srlist[random.randint(0,srcounttotal)]
                         print(cardid)
@@ -427,7 +431,8 @@ async def on_message(message):
                                     test = await resp2.read()
                                     with open("card" + str(x) + ".png", "wb") as f:
                                         f.write(test)
-                        notr = notr + 1
+                        notr += 1
+                        sr += 1
                     if chance == 100:
                         cardid = urlist[random.randint(0,urcounttotal)]
                         print(cardid)
@@ -439,7 +444,8 @@ async def on_message(message):
                                     test = await resp2.read()
                                     with open("card" + str(x) + ".png", "wb") as f:
                                         f.write(test)
-                        notr = notr + 1
+                        notr += 1
+                        ur += 1
             #if no SR/UR in first 10, then give 90/10% chance of SR/UR
                 elif notr == 0:
                     chance3 = random.randint(0,100)
@@ -454,6 +460,7 @@ async def on_message(message):
                                     test = await resp2.read()
                                     with open("card" + str(x) + ".png", "wb") as f:
                                         f.write(test)
+                        sr += 1
                         notr = notr + 1
                     if 91 <= chance3 <= 100:
                         cardid = urlist[random.randint(0,urcounttotal)]
@@ -466,6 +473,7 @@ async def on_message(message):
                                     test = await resp2.read()
                                     with open("card" + str(x) + ".png", "wb") as f:
                                         f.write(test)
+                        ur += 1
             #if at least 1 SR/UR in first 10, then draw normal chance for last card
                 elif notr > 0:
                     chance1 = random.randint(0,100)
@@ -480,6 +488,7 @@ async def on_message(message):
                                     test = await resp2.read()
                                     with open("card" + str(x) + ".png", "wb") as f:
                                         f.write(test)
+                        rare += 1
                     if 91 <= chance1 <= 99:
                         cardid = srlist[random.randint(0,srcounttotal)]
                         print(cardid)
@@ -491,6 +500,7 @@ async def on_message(message):
                                     test = await resp2.read()
                                     with open("card" + str(x) + ".png", "wb") as f:
                                         f.write(test)
+                        sr += 1
                         notr = notr + 1
                     if chance1 == 100:
                         cardid = urlist[random.randint(0,urcounttotal)]
@@ -503,6 +513,7 @@ async def on_message(message):
                                     test = await resp2.read()
                                     with open("card" + str(x) + ".png", "wb") as f:
                                         f.write(test)
+                        ur += 1
                     print(time.time()-start)
                 if x == 0:
                     imagemake.paste(Image.open(os.path.join(imgsave,"card0.png")),(0,0))
@@ -531,6 +542,8 @@ async def on_message(message):
                     imagesend = imageresize.resize((1024,1080))
                     imagesend.save(imgmergedsend)
                     await client.send_file(message.channel, imgmergedsend)
+                    msg = "{} scouted {}R's, {}SR's and {}UR's".format(message.author.mention, str(rare), str(sr), str(ur))
+                    await client.send_message(message.channel, msg)
                     print(time.time()-start)
                     print(notr)
 
