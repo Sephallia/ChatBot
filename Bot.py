@@ -60,13 +60,13 @@ async def on_message(message):
 
 #songlist
     if message.content.startswith("!songhelp"):
-        msg = "`!hearttoheart - Queues Heart to Heart(full single)`\n`!waowao - Queues WAO-WAO Powerful Day!(full single)`\n`!omoide - Queues 思い出以上になりたくて(full single)`\n`!sakkaku - Queues 錯覚CROSSROADS(full single)`\n`!angelic - Queues Angelic Angel(full single)`\n`!sunnydaysong - Queues Sunny Day Song(full single)`\n`!yumenotobira - Queues Yume no Tobira(full single)`\n`!aqours - Queues 君のこころは輝いてるかい？(3songs)`\n`!imas1 - Queues some IM@S CG songs(5songs)`\n`!imas2 - Queues some different IM@S CG songs(5songs)`\n`!itsudemo - Queues (✿◠‿◠) 〜ITSUDEMO (✿◠‿◠) 〜(1song)`\n`!psychicfire - Queues PSYCHIC FIRE(1song)`\n`!brainpower - Lists Brainpower!`\n`!shunjou - Queues 春情ロマンティック(1song)`\n`!korekara - Queues これから(1song)`\n`!bokuhika - Queues 僕たちはひとつの光(1song)`\n`!storminlover - Queues Storm in Lover(1song)`\n`!magnetic - Queues ずるいよMagnetic Today(1song)`\n`!feels - ;-;`"
+        msg = "`!hearttoheart - ueues Heart to Heart(full single)`\n`!waowao - Queues WAO-WAO Powerful Day!(full single)`\n`!omoide - Queues 思い出以上になりたくて(full single)`\n`!sakkaku - Queues 錯覚CROSSROADS(full single)`\n`!angelic - Queues Angelic Angel(full single)`\n`!sunnydaysong - Queues Sunny Day Song(full single)`\n`!yumenotobira - Queues Yume no Tobira(full single)`\n`!aqours - Queues 君のこころは輝いてるかい？(3songs)`\n`!imas1 - Queues some IM@S CG songs(5songs)`\n`!imas2 - Queues some different IM@S CG songs(5songs)`\n`!itsudemo - Queues (✿◠‿◠) 〜ITSUDEMO (✿◠‿◠) 〜(1song)`\n`!psychicfire - Queues PSYCHIC FIRE(1song)`\n`!brainpower - Lists Brainpower!`\n`!shunjou - Queues 春情ロマンティック(1song)`\n`!korekara - Queues これから(1song)`\n`!bokuhika - Queues 僕たちはひとつの光(1song)`\n`!storminlover - Queues Storm in Lover(1song)`\n`!magnetic - Queues ずるいよMagnetic Today(1song)`\n`!feels - ;-; (3songs)`\n`!gochiusa1 - Queues some GochiUsa songs(4songs)`\n`!gochiusa2 - Queues some different GochiUsa songs(4songs)`\n`!railgun1 - Queues some Railgun music(4songs)`"
         await client.send_message(message.channel, msg)
 
 #list of stuff to do
     if message.content.startswith("!todo"):
         if str(message.author.id) == "97097796372414464":
-            msg = "'Code MusicBot auto restart command' \n '~~Finish coding 10+1 scout sim~~(mostly)' \n `do envelope animations` \n 'Figure out that queue thing after shuffle' \n '~~make LewdLive MusicBot~~' \n '~~Subunit autoplaylitsts~~' \n 'Make !music command better \n `twitch emotes` \n `add trivia`\n`figure out async`\n`get specific users scouts`\n`log number of messages sent by users in channel i.e the way Eter does it`\n`save scout data`"
+            msg = "'Code MusicBot auto restart command' \n '~~Finish coding 10+1 scout sim~~(mostly)' \n `do envelope animations` \n 'Figure out that queue thing after shuffle' \n '~~make LewdLive MusicBot~~' \n '~~Subunit autoplaylitsts~~' \n 'Make !music command better \n `twitch emotes` \n `add trivia`\n`figure out async`\n`get specific users scouts`\n`log number of messages sent by users in channel i.e the way Eter does it`\n`save scout data`\n`change songs to their own module`"
             await client.send_message(message.channel, msg)
         else:
             msg = "You're not my Onii-chan!"
@@ -392,6 +392,75 @@ async def on_message(message):
         await client.delete_message(msg_obj)
 
         msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/BokuHika.mp3"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        #GochiUsa1
+    if message.content == "!gochiusa1":
+        import asyncio
+        msg = "!play https://www.dropbox.com/s/hb4ykqevzhu3l6k/01%20Daydream%20cafe.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/s/6r5yosvtc3x4m6r/01%20Poppin%20Jump%E2%99%AA.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/s/nruve2hsd9yqxb4/nopoi%21.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/s/r8nmibjbdbck9dx/01tokimekipoporon%E2%99%AA.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        #GochiUsa2
+    if message.content == "!gochiusa2":
+        import asyncio
+        msg = "!play https://www.dropbox.com/s/di1ljh0qi1uqago/nantonaku.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/s/5wnt4mteigbchjf/nikkori.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/s/khyz9uz5j6eyjeu/nopoichino.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/s/aeny1wtfwwyzba9/02%20Daydream%20caf%C3%A9%20~Chino%20Ver.~.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        #Railgun
+    if message.content == "!railgun1":
+        import asyncio
+        msg = "!play https://www.dropbox.com/s/z0pc5ll4nm8vc64/01.%20only%20my%20railgun.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/s/frv09zcfubeblw2/02.%20LEVEL5%20-judgelight-.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/s/m62l6jtwdhb50ar/05.%20future%20gazer.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/s/uggjeij64ugwvhp/12.%20sister%27s%20noise.mp3?dl=0"
         msg_obj = await client.send_message(message.channel, msg)
         asyncio.sleep(3)
         await client.delete_message(msg_obj)

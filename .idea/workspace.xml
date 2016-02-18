@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ad9a53a-6d32-4237-bf2a-f27dcf52e5b8" name="Default" comment="" />
+    <list default="true" id="0ad9a53a-6d32-4237-bf2a-f27dcf52e5b8" name="Default" comment="Added">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Images/Thumbs.db" afterPath="$PROJECT_DIR$/Images/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Images/card.png" afterPath="$PROJECT_DIR$/Images/card.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Images/merged.png" afterPath="$PROJECT_DIR$/Images/merged.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bot.py" afterPath="$PROJECT_DIR$/Bot.py" />
+    </list>
     <ignored path="ChatBot.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,14 +26,50 @@
     <favorites_list name="ChatBot" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Bot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6257862">
-              <caret line="341" column="32" selection-start-line="341" selection-start-column="32" selection-end-line="341" selection-end-column="32" />
+            <state vertical-scroll-proportion="-0.78304595">
+              <caret line="444" column="0" selection-start-line="444" selection-start-column="0" selection-end-line="444" selection-end-column="0" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
+                <marker date="1455781683786" expanded="false" signature="1459:1853" placeholder="..." />
+                <marker date="1455781683786" expanded="true" signature="1855:2381" placeholder="..." />
+                <marker date="1455781683786" expanded="true" signature="2383:3539" placeholder="..." />
+                <marker date="1455781683786" expanded="true" signature="3541:4330" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="4332:10335" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="10361:11063" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="11065:11699" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="11701:12516" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="12518:13145" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="13147:13799" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="13801:14434" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="14436:15061" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="15063:16775" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="16777:18257" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="18259:18688" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="18690:19043" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="19045:19327" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="19329:19767" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="19769:20066" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="20068:21622" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="21624:21999" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="22001:22339" placeholder="..." />
+                <marker date="1455781683786" expanded="true" signature="22007:22339" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="22341:22693" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="22695:23046" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="23048:24283" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="24285:25097" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="25099:26104" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="26106:27098" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="27100:28117" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="28120:36473" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="36476:36984" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="36986:38249" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="38251:40114" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="40116:40469" placeholder="..." />
+                <marker date="1455781683786" expanded="false" signature="40471:41260" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -42,10 +84,20 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/TestBot.py" />
+        <option value="$PROJECT_DIR$/asynctest.py" />
+        <option value="$PROJECT_DIR$/Test.py" />
+        <option value="$PROJECT_DIR$/Download.py" />
+        <option value="$PROJECT_DIR$/bot_new.py" />
+        <option value="$USER_HOME$/Desktop/Bot Folder/MusicBot-develop/musicbot/bot.py" />
+        <option value="$PROJECT_DIR$/edits.py" />
+        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/Bot.py" />
       </list>
     </option>
@@ -81,7 +133,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -107,14 +158,15 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/download_new.py" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.Bot">
+  <component name="RunManager" selected="Python.test">
     <configuration default="false" name="Bot" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -128,6 +180,74 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ChatBot" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Bot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ChatBot" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="bot_new" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ChatBot" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bot_new.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="edits" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ChatBot" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/edits.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ChatBot" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -254,12 +374,20 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.Bot" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Test" />
+      <item index="2" class="java.lang.String" itemvalue="Python.bot_new" />
+      <item index="3" class="java.lang.String" itemvalue="Python.edits" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test" />
     </list>
     <recent_temporary>
-      <list size="1">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.Bot" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.edits" />
+        <item index="3" class="java.lang.String" itemvalue="Python.bot_new" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -274,28 +402,108 @@
       <option name="number" value="Default" />
       <updated>1454285275759</updated>
     </task>
+    <task id="LOCAL-00001" summary="added (✿◠‿◠) 〜ITSUDEMO (✿◠‿◠) 〜 to queue">
+      <created>1455310316388</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1455310316388</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added (✿◠‿◠) 〜ITSUDEMO (✿◠‿◠) 〜 to queue, figured lists out, and changed greeting.">
+      <created>1455331199112</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1455331199112</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Got 10+1 to scout with proper percentages, and create/send image. Guaranteed SR not implemented yet.">
+      <created>1455337145126</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1455337145126</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added combined image resize, super messy though.">
+      <created>1455341287573</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1455341287573</updated>
+    </task>
+    <task id="LOCAL-00005" summary="updated todo">
+      <created>1455342215740</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1455342215740</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixed guaranteed SR, but needs chance for last card implemented somehow">
+      <created>1455413675367</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1455413675367</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added more songs, updated songhelp command">
+      <created>1455555861586</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1455555861586</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Async http should work now, requests commented out because of schoolidol.lu API responding too slow to load bot.">
+      <created>1455583988528</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1455583988528</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changed time.sleep() to asyncio.sleep()">
+      <created>1455606680887</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1455606680887</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fixed scouting logic, added text scouting, added new commands, and brought back !asyntest for Insti">
+      <created>1455685160788</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1455685160788</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added mentions to scouting and card counts">
+      <created>1455687198504</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1455687198504</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changed !lolibothelp to @lolibot mention in chat, excluding MusicBot. Changed !scouttest to normal command of !scout11.">
+      <created>1455691077258</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1455691077258</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Recoded a bit of scouting logic, moved creating session to outside the for loop, added speedtest stuff (will probably remove next update. Created command to get urls.">
+      <created>1455780248685</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1455780248685</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13958333" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3024236" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23919916" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39936775" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -310,34 +518,125 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added (✿◠‿◠) 〜ITSUDEMO (✿◠‿◠) 〜 to queue" />
+    <MESSAGE value="added (✿◠‿◠) 〜ITSUDEMO (✿◠‿◠) 〜 to queue, figured lists out, and changed greeting." />
+    <MESSAGE value="Got 10+1 to scout with proper percentages, and create/send image. Guaranteed SR not implemented yet." />
+    <MESSAGE value="Added combined image resize, super messy though." />
+    <MESSAGE value="updated todo" />
+    <MESSAGE value="Fixed guaranteed SR, but needs chance for last card implemented somehow" />
+    <MESSAGE value="Added more songs, updated songhelp command" />
+    <MESSAGE value="Async http should work now, requests commented out because of schoolidol.lu API responding too slow to load bot." />
+    <MESSAGE value="Changed time.sleep() to asyncio.sleep()" />
+    <MESSAGE value="Fixed scouting logic, added text scouting, added new commands, and brought back !asyntest for Insti" />
+    <MESSAGE value="Added mentions to scouting and card counts" />
+    <MESSAGE value="Changed !lolibothelp to @lolibot mention in chat, excluding MusicBot. Changed !scouttest to normal command of !scout11." />
+    <MESSAGE value="Recoded a bit of scouting logic, moved creating session to outside the for loop, added speedtest stuff (will probably remove next update. Created command to get urls." />
+    <option name="LAST_COMMIT_MESSAGE" value="Recoded a bit of scouting logic, moved creating session to outside the for loop, added speedtest stuff (will probably remove next update. Created command to get urls." />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/discord.py-async/examples/reply.py">
+    <entry file="file://$PROJECT_DIR$/Bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11050921">
-          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MemeBot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6152758">
-          <caret line="118" column="78" selection-start-line="118" selection-start-column="78" selection-end-line="118" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14#0" expanded="false" />
+            <element signature="e#0#37#0" expanded="true" />
+            <marker date="1455781683786" expanded="false" signature="1459:1853" placeholder="..." />
+            <marker date="1455781683786" expanded="true" signature="1855:2381" placeholder="..." />
+            <marker date="1455781683786" expanded="true" signature="2383:3539" placeholder="..." />
+            <marker date="1455781683786" expanded="true" signature="3541:4330" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="4332:10335" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="10361:11063" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="11065:11699" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="11701:12516" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="12518:13145" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="13147:13799" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="13801:14434" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="14436:15061" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="15063:16775" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="16777:18257" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="18259:18688" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="18690:19043" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="19045:19327" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="19329:19767" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="19769:20066" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="20068:21622" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="21624:21999" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="22001:22339" placeholder="..." />
+            <marker date="1455781683786" expanded="true" signature="22007:22339" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="22341:22693" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="22695:23046" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="23048:24283" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="24285:25097" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="25099:26104" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="26106:27098" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="27100:28117" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="28120:36473" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="36476:36984" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="36986:38249" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="38251:40114" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="40116:40469" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="40471:41260" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MemeBot (1).py">
+    <entry file="file://$PROJECT_DIR$/Bot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+            <marker date="1455781683786" expanded="false" signature="1459:1853" placeholder="..." />
+            <marker date="1455781683786" expanded="true" signature="1855:2381" placeholder="..." />
+            <marker date="1455781683786" expanded="true" signature="2383:3539" placeholder="..." />
+            <marker date="1455781683786" expanded="true" signature="3541:4330" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="4332:10335" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="10361:11063" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="11065:11699" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="11701:12516" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="12518:13145" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="13147:13799" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="13801:14434" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="14436:15061" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="15063:16775" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="16777:18257" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="18259:18688" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="18690:19043" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="19045:19327" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="19329:19767" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="19769:20066" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="20068:21622" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="21624:21999" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="22001:22339" placeholder="..." />
+            <marker date="1455781683786" expanded="true" signature="22007:22339" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="22341:22693" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="22695:23046" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="23048:24283" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="24285:25097" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="25099:26104" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="26106:27098" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="27100:28117" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="28120:36473" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="36476:36984" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="36986:38249" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="38251:40114" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="40116:40469" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="40471:41260" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/discord.py-async/examples/reply.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11050921">
+          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -345,34 +644,105 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35643566">
           <caret line="114" column="23" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1772" column="0" selection-start-line="1772" selection-start-column="0" selection-end-line="1772" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestBot.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/asyncio/base_events.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12880887">
-          <caret line="221" column="42" selection-start-line="221" selection-start-column="42" selection-end-line="221" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="324" column="0" selection-start-line="324" selection-start-column="0" selection-end-line="324" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Bot Folder/MusicBot-develop/musicbot/bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4293948">
+          <caret line="510" column="18" selection-start-line="510" selection-start-column="18" selection-end-line="510" selection-end-column="18" />
           <folding>
-            <element signature="e#0#37#0" expanded="false" />
+            <element signature="e#0#11#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/discord/client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="253" column="0" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="287" column="0" selection-start-line="287" selection-start-column="0" selection-end-line="287" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/edits.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5617816">
+          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#14#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24281609">
+          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6257862">
-          <caret line="341" column="32" selection-start-line="341" selection-start-column="32" selection-end-line="341" selection-end-column="32" />
+        <state vertical-scroll-proportion="-0.78304595">
+          <caret line="444" column="0" selection-start-line="444" selection-start-column="0" selection-end-line="444" selection-end-column="0" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
+            <marker date="1455781683786" expanded="false" signature="1459:1853" placeholder="..." />
+            <marker date="1455781683786" expanded="true" signature="1855:2381" placeholder="..." />
+            <marker date="1455781683786" expanded="true" signature="2383:3539" placeholder="..." />
+            <marker date="1455781683786" expanded="true" signature="3541:4330" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="4332:10335" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="10361:11063" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="11065:11699" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="11701:12516" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="12518:13145" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="13147:13799" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="13801:14434" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="14436:15061" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="15063:16775" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="16777:18257" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="18259:18688" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="18690:19043" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="19045:19327" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="19329:19767" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="19769:20066" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="20068:21622" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="21624:21999" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="22001:22339" placeholder="..." />
+            <marker date="1455781683786" expanded="true" signature="22007:22339" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="22341:22693" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="22695:23046" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="23048:24283" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="24285:25097" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="25099:26104" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="26106:27098" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="27100:28117" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="28120:36473" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="36476:36984" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="36986:38249" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="38251:40114" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="40116:40469" placeholder="..." />
+            <marker date="1455781683786" expanded="false" signature="40471:41260" placeholder="..." />
           </folding>
         </state>
       </provider>
