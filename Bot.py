@@ -3,6 +3,8 @@ import discord
 import os
 import json
 import requests
+import aiohttp
+import asyncio
 from PIL import Image
 
 
@@ -53,18 +55,18 @@ async def on_message(message):
         if message.author.id == "139966249248489472":
             return
         else:
-            msg_obj = "`Hi! I'm a bot made by link2110 to queue music and other things! Here are my commands:`\n`!hello - greets you`\n`!songhelp - list of songs to queue`\n`!scout11 - scouts 10+1 guaranteed SR/UR. May be slow, please wait.`\n`!textscout - Scouts 10+1 guaranteed SR/UR in text form`"
-            await client.send_message(message.channel, msg_obj)
-            time.sleep(5)
-            await client.delete_message(msg_obj)
+            msg = "`Hi! I'm a bot made by link2110 to queue music and other things! Here are my commands:`\n`!hello - greets you`\n`!songhelp - list of songs to queue`\n`!scout11 - scouts 10+1 guaranteed SR/UR. May be slow, please wait.`\n`!textscout - Scouts 10+1 guaranteed SR/UR in text form`"
+            await client.send_message(message.channel, msg)
+
 #songlist
     if message.content.startswith("!songhelp"):
         msg = "`!hearttoheart - Queues Heart to Heart(full single)`\n`!waowao - Queues WAO-WAO Powerful Day!(full single)`\n`!omoide - Queues 思い出以上になりたくて(full single)`\n`!sakkaku - Queues 錯覚CROSSROADS(full single)`\n`!angelic - Queues Angelic Angel(full single)`\n`!sunnydaysong - Queues Sunny Day Song(full single)`\n`!yumenotobira - Queues Yume no Tobira(full single)`\n`!aqours - Queues 君のこころは輝いてるかい？(3songs)`\n`!imas1 - Queues some IM@S CG songs(5songs)`\n`!imas2 - Queues some different IM@S CG songs(5songs)`\n`!itsudemo - Queues (✿◠‿◠) 〜ITSUDEMO (✿◠‿◠) 〜(1song)`\n`!psychicfire - Queues PSYCHIC FIRE(1song)`\n`!brainpower - Lists Brainpower!`\n`!shunjou - Queues 春情ロマンティック(1song)`\n`!korekara - Queues これから(1song)`\n`!bokuhika - Queues 僕たちはひとつの光(1song)`\n`!storminlover - Queues Storm in Lover(1song)`\n`!magnetic - Queues ずるいよMagnetic Today(1song)`\n`!feels - ;-;`"
         await client.send_message(message.channel, msg)
+
 #list of stuff to do
     if message.content.startswith("!todo"):
         if str(message.author.id) == "97097796372414464":
-            msg = "'Code MusicBot auto restart command' \n '~~Finish coding 10+1 scout sim~~(mostly)' \n `do envelope animations` \n 'Figure out that queue thing after shuffle' \n '~~make LewdLive MusicBot~~' \n '~~Subunit autoplaylitsts~~' \n 'Make !music command better \n `twitch emotes` \n `add trivia`\n`figure out async`\n`get specific users scouts`"
+            msg = "'Code MusicBot auto restart command' \n '~~Finish coding 10+1 scout sim~~(mostly)' \n `do envelope animations` \n 'Figure out that queue thing after shuffle' \n '~~make LewdLive MusicBot~~' \n '~~Subunit autoplaylitsts~~' \n 'Make !music command better \n `twitch emotes` \n `add trivia`\n`figure out async`\n`get specific users scouts`\n`log number of messages sent by users in channel i.e the way Eter does it`\n`save scout data`"
             await client.send_message(message.channel, msg)
         else:
             msg = "You're not my Onii-chan!"
@@ -299,10 +301,10 @@ async def on_message(message):
 
         #Brainpower
     if message.content.startswith("!brainpower"):
-        import asyncio
+        import time
         msg = "https://www.youtube.com/watch?v=9R8aSKwTEMg"
         msg_obj = await client.send_message(message.channel, msg)
-        asyncio.sleep(5)
+        time.sleep(5)
         await client.delete_message(msg_obj)
 
         #Shunjou Romantic
@@ -406,152 +408,139 @@ async def on_message(message):
             imgsave = "H:\Documents\PyCharmProjects\ChatBot"
             imagesend = os.path.join(imgsave,"merged.png")
             imgmergedsend =os.path.join(imgsave,"merged2.png")
+            siteurl = "http://schoolido.lu/api/cards/"
             notr = 0
             rare = 0
             sr = 0
             ur = 0
-            for x in range(11):
-            # draw 10 cards with the chances for R/SR/UR at 90/9/1%
-                if 0 <= x <= 9:
-                    chance = random.randint(0,100)
-                    if 0 <= chance <= 90:
-                        cardid = rlist[random.randint(0,rcounttotal-1)]
-                        print(cardid)
-                        with aiohttp.ClientSession() as session:
-                            async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
-                                data = await resp.json()
-                                card = data["card_image"]
-                                async with session.get(card) as resp2:
-                                    test = await resp2.read()
-                                    with open("card" + str(x) + ".png", "wb") as f:
-                                        f.write(test)
-                        rare += 1
-                    if 91 <= chance <= 99:
-                        cardid = srlist[random.randint(0,srcounttotal)]
-                        print(cardid)
-                        with aiohttp.ClientSession() as session:
-                            async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
-                                data = await resp.json()
-                                card = data["card_image"]
-                                async with session.get(card) as resp2:
-                                    test = await resp2.read()
-                                    with open("card" + str(x) + ".png", "wb") as f:
-                                        f.write(test)
-                        notr += 1
-                        sr += 1
-                    if chance == 100:
-                        cardid = urlist[random.randint(0,urcounttotal)]
-                        print(cardid)
-                        with aiohttp.ClientSession() as session:
-                            async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
-                                data = await resp.json()
-                                card = data["card_image"]
-                                async with session.get(card) as resp2:
-                                    test = await resp2.read()
-                                    with open("card" + str(x) + ".png", "wb") as f:
-                                        f.write(test)
-                        notr += 1
-                        ur += 1
-            #if no SR/UR in first 10, then give 90/10% chance of SR/UR
-                elif notr == 0:
-                    chance3 = random.randint(0,100)
-                    if 0 <= chance3 <= 90:
-                        cardid = srlist[random.randint(0,srcounttotal)]
-                        print(cardid)
-                        with aiohttp.ClientSession() as session:
-                            async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
-                                data = await resp.json()
-                                card = data["card_image"]
-                                async with session.get(card) as resp2:
-                                    test = await resp2.read()
-                                    with open("card" + str(x) + ".png", "wb") as f:
-                                        f.write(test)
-                        sr += 1
-                        notr = notr + 1
-                    if 91 <= chance3 <= 100:
-                        cardid = urlist[random.randint(0,urcounttotal)]
-                        print(cardid)
-                        with aiohttp.ClientSession() as session:
-                            async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
-                                data = await resp.json()
-                                card = data["card_image"]
-                                async with session.get(card) as resp2:
-                                    test = await resp2.read()
-                                    with open("card" + str(x) + ".png", "wb") as f:
-                                        f.write(test)
-                        ur += 1
-            #if at least 1 SR/UR in first 10, then draw normal chance for last card
-                elif notr > 0:
-                    chance1 = random.randint(0,100)
-                    if 0 <= chance1 <= 90:
-                        cardid = rlist[random.randint(0,rcounttotal-1)]
-                        print(cardid)
-                        with aiohttp.ClientSession() as session:
-                            async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
-                                data = await resp.json()
-                                card = data["card_image"]
-                                async with session.get(card) as resp2:
-                                    test = await resp2.read()
-                                    with open("card" + str(x) + ".png", "wb") as f:
-                                        f.write(test)
-                        rare += 1
-                    if 91 <= chance1 <= 99:
-                        cardid = srlist[random.randint(0,srcounttotal)]
-                        print(cardid)
-                        with aiohttp.ClientSession() as session:
-                            async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
-                                data = await resp.json()
-                                card = data["card_image"]
-                                async with session.get(card) as resp2:
-                                    test = await resp2.read()
-                                    with open("card" + str(x) + ".png", "wb") as f:
-                                        f.write(test)
-                        sr += 1
-                        notr = notr + 1
-                    if chance1 == 100:
-                        cardid = urlist[random.randint(0,urcounttotal)]
-                        print(cardid)
-                        with aiohttp.ClientSession() as session:
-                            async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
-                                data = await resp.json()
-                                card = data["card_image"]
-                                async with session.get(card) as resp2:
-                                    test = await resp2.read()
-                                    with open("card" + str(x) + ".png", "wb") as f:
-                                        f.write(test)
-                        ur += 1
-                    print(time.time()-start)
-                if x == 0:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card0.png")),(0,0))
-                elif x == 1:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card1.png")),(513,0))
-                elif x == 2:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card2.png")),(1025,0))
-                elif x == 3:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card3.png")),(1537,0))
-                elif x == 4:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card4.png")),(0,721))
-                elif x == 5:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card5.png")),(513,721))
-                elif x == 6:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card6.png")),(1025,721))
-                elif x == 7:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card7.png")),(1537,721))
-                elif x == 8:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card8.png")),(0,1441))
-                elif x == 9:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card9.png")),(513,1441))
-                elif x == 10:
-                    imagemake.paste(Image.open(os.path.join(imgsave,"card10.png")),(1025,1441))
-                    imagemake.save(imagesend)
-                    imageresize = Image.open(imagesend)
-                    imagesend = imageresize.resize((1024,1080))
-                    imagesend.save(imgmergedsend)
-                    await client.send_file(message.channel, imgmergedsend)
-                    msg = "{} scouted {}R's, {}SR's and {}UR's".format(message.author.mention, str(rare), str(sr), str(ur))
-                    await client.send_message(message.channel, msg)
-                    print(time.time()-start)
-                    print(notr)
+            with aiohttp.ClientSession() as session:
+                for x in range(11):
+                # draw 10 cards with the chances for R/SR/UR at 90/9/1%
+                    if 0 <= x <= 9:
+                        chance = random.randint(0,100)
+                        if 0 <= chance <= 90:
+                            cardid = rlist[random.randint(0,rcounttotal-1)]
+                            print(cardid)
+                            data = await get_url(siteurl + str(cardid))
+                            cardurl = data["card_image"]
+                            async with session.get(cardurl) as resp:
+                                cardimg = await resp.read()
+                                with open("card" + str(x) + ".png", "wb") as f:
+                                    f.write(cardimg)
+                            rare += 1
+                        if 91 <= chance <= 99:
+                            cardid = srlist[random.randint(0,srcounttotal)]
+                            print(cardid)
+                            data = await get_url(siteurl + str(cardid))
+                            cardurl = data["card_image"]
+                            async with session.get(cardurl) as resp:
+                                cardimg = await resp.read()
+                                with open("card" + str(x) + ".png", "wb") as f:
+                                    f.write(cardimg)
+                            notr += 1
+                            sr += 1
+                        if chance == 100:
+                            cardid = urlist[random.randint(0,urcounttotal)]
+                            print(cardid)
+                            data = await get_url(siteurl + str(cardid))
+                            cardurl = data["card_image"]
+                            async with session.get(cardurl) as resp:
+                                cardimg = await resp.read()
+                                with open("card" + str(x) + ".png", "wb") as f:
+                                    f.write(cardimg)
+                            notr += 1
+                            ur += 1
+                #if no SR/UR in first 10, then give 90/10% chance of SR/UR
+                    elif notr == 0:
+                        chance3 = random.randint(0,100)
+                        if 0 <= chance3 <= 90:
+                            cardid = srlist[random.randint(0,srcounttotal)]
+                            print(cardid)
+                            data = await get_url(siteurl + str(cardid))
+                            cardurl = data["card_image"]
+                            async with session.get(cardurl) as resp:
+                                cardimg = await resp.read()
+                                with open("card" + str(x) + ".png", "wb") as f:
+                                    f.write(cardimg)
+                            sr += 1
+                            notr = notr + 1
+                        if 91 <= chance3 <= 100:
+                            cardid = urlist[random.randint(0,urcounttotal)]
+                            print(cardid)
+                            data = await get_url(siteurl + str(cardid))
+                            cardurl = data["card_image"]
+                            async with session.get(cardurl) as resp:
+                                cardimg = await resp.read()
+                                with open("card" + str(x) + ".png", "wb") as f:
+                                    f.write(cardimg)
+                            ur += 1
+                #if at least 1 SR/UR in first 10, then draw normal chance for last card
+                    elif notr > 0:
+                        chance1 = random.randint(0,100)
+                        if 0 <= chance1 <= 90:
+                            cardid = rlist[random.randint(0,rcounttotal-1)]
+                            print(cardid)
+                            data = await get_url(siteurl + str(cardid))
+                            cardurl = data["card_image"]
+                            async with session.get(cardurl) as resp:
+                                cardimg = await resp.read()
+                                with open("card" + str(x) + ".png", "wb") as f:
+                                    f.write(cardimg)
+                            rare += 1
+                        if 91 <= chance1 <= 99:
+                            cardid = srlist[random.randint(0,srcounttotal)]
+                            print(cardid)
+                            data = await get_url(siteurl + str(cardid))
+                            cardurl = data["card_image"]
+                            async with session.get(cardurl) as resp:
+                                cardimg = await resp.read()
+                                with open("card" + str(x) + ".png", "wb") as f:
+                                    f.write(cardimg)
+                            sr += 1
+                            notr = notr + 1
+                        if chance1 == 100:
+                            cardid = urlist[random.randint(0,urcounttotal)]
+                            print(cardid)
+                            data = await get_url(siteurl + str(cardid))
+                            cardurl = data["card_image"]
+                            async with session.get(cardurl) as resp:
+                                cardimg = await resp.read()
+                                with open("card" + str(x) + ".png", "wb") as f:
+                                    f.write(cardimg)
+                            ur += 1
+                        print(time.time()-start)
+                    if x == 0:
+                        imagemake.paste(Image.open(os.path.join(imgsave,"card0.png")),(0,0))
+                    elif x == 1:
+                        imagemake.paste(Image.open(os.path.join(imgsave,"card1.png")),(513,0))
+                    elif x == 2:
+                        imagemake.paste(Image.open(os.path.join(imgsave,"card2.png")),(1025,0))
+                    elif x == 3:
+                        imagemake.paste(Image.open(os.path.join(imgsave,"card3.png")),(1537,0))
+                    elif x == 4:
+                        imagemake.paste(Image.open(os.path.join(imgsave,"card4.png")),(0,721))
+                    elif x == 5:
+                        imagemake.paste(Image.open(os.path.join(imgsave,"card5.png")),(513,721))
+                    elif x == 6:
+                        imagemake.paste(Image.open(os.path.join(imgsave,"card6.png")),(1025,721))
+                    elif x == 7:
+                        imagemake.paste(Image.open(os.path.join(imgsave,"card7.png")),(1537,721))
+                    elif x == 8:
+                        imagemake.paste(Image.open(os.path.join(imgsave,"card8.png")),(0,1441))
+                    elif x == 9:
+                        imagemake.paste(Image.open(os.path.join(imgsave,"card9.png")),(513,1441))
+                    elif x == 10:
+                        imagemake.paste(Image.open(os.path.join(imgsave,"card10.png")),(1025,1441))
+                        imagemake.save(imagesend)
+                        imageresize = Image.open(imagesend)
+                        imagesend = imageresize.resize((1024,1080))
+                        imagesend.save(imgmergedsend)
+                        print(time.time()-start)
+                        await client.send_file(message.channel, imgmergedsend)
+                        msg = "{} scouted {}R's, {}SR's and {}UR's".format(message.author.mention, str(rare), str(sr), str(ur))
+                        await client.send_message(message.channel, msg)
+                        print(time.time()-start)
+                        print(notr)
 
         # else:
         #     msg = "You're not my Onii-chan!"
@@ -604,6 +593,7 @@ async def on_message(message):
                     notrare += 1
         msg = "You scouted " + str(rare) + " R's, " + str(superrare) + " SR's, and " + str(ultrarare) + " UR's."
         await client.send_message(message.channel, msg)
+        id = message.author.id
 
     if message.content.startswith("!chance2test"):
         # if message.author.id == "97097796372414464":
@@ -654,10 +644,67 @@ async def on_message(message):
             msg = "Fuk you {0.author.mention}".format(message)
             await client.send_message(message.channel, msg)
         else:
-            msg = "This command is dead, use !scouttest"
+            msg = "This command is dead, use !scout11"
             await client.send_message(message.channel, msg)
 
+    if message.content.startswith("!speedtest1"):
+        import random
+        import aiohttp
+        import time
+        start = time.time()
+        with aiohttp.ClientSession() as session:
+            for x in range(11):
+                cardid = rlist[random.randint(0,rcounttotal-1)]
+                print(cardid)
+                async with session.get("http://schoolido.lu/api/cards/" + str(cardid)) as resp:
+                    data = await resp.json()
+                    card = data["card_image"]
+                    async with session.get(card) as resp2:
+                        cardimg = await resp2.read()
+                        with open("card" + str(x) + ".png", "wb") as f:
+                            f.write(cardimg)
+        print("Done!")
+        print(time.time()-start)
 
+    if message.content.startswith("!speedtest2"):
+        import random
+        import aiohttp
+        import time
+        start = time.time()
+        siteurl = "http://schoolido.lu/api/cards/"
+        with aiohttp.ClientSession() as session:
+            for x in range(11):
+                cardid = rlist[random.randint(0,rcounttotal-1)]
+                data = await get_url(siteurl + str(cardid))
+                cardurl = data["card_image"]
+                print(cardurl)
+                # async with session.get(cardurl) as resp:
+                #     cardimg = await resp.read()
+                #     with open("card" + str(x) + ".png", "wb") as f:
+                #         f.write(cardimg)
+            print(time.time()-start)
+
+
+async def get_url(url):
+    response = await aiohttp.request("GET", url)
+    data = await response.json()
+    return data
+
+
+
+#stats_dict = {id : Stat}
+
+class Stat:
+    def __init__(self):
+        self.count = 0
+        self.r = 0
+        self.sr = 0
+        self.ur = 0
+    def update(self, scout_res):
+        self.count += 1
+        self.r += scout_res.count('r')
+        self.sr += scout_res.count('sr')
+        self.ur += scout_res.count('ur')
 
 #client.change_status(game=discord.Game(name="your custom game here"))
 @client.event
