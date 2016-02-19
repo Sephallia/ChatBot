@@ -60,13 +60,13 @@ async def on_message(message):
 
 #songlist
     if message.content.startswith("!songhelp"):
-        msg = "`!hearttoheart - ueues Heart to Heart(full single)`\n`!waowao - Queues WAO-WAO Powerful Day!(full single)`\n`!omoide - Queues 思い出以上になりたくて(full single)`\n`!sakkaku - Queues 錯覚CROSSROADS(full single)`\n`!angelic - Queues Angelic Angel(full single)`\n`!sunnydaysong - Queues Sunny Day Song(full single)`\n`!yumenotobira - Queues Yume no Tobira(full single)`\n`!aqours - Queues 君のこころは輝いてるかい？(3songs)`\n`!imas1 - Queues some IM@S CG songs(5songs)`\n`!imas2 - Queues some different IM@S CG songs(5songs)`\n`!itsudemo - Queues (✿◠‿◠) 〜ITSUDEMO (✿◠‿◠) 〜(1song)`\n`!psychicfire - Queues PSYCHIC FIRE(1song)`\n`!brainpower - Lists Brainpower!`\n`!shunjou - Queues 春情ロマンティック(1song)`\n`!korekara - Queues これから(1song)`\n`!bokuhika - Queues 僕たちはひとつの光(1song)`\n`!storminlover - Queues Storm in Lover(1song)`\n`!magnetic - Queues ずるいよMagnetic Today(1song)`\n`!feels - ;-; (3songs)`\n`!gochiusa1 - Queues some GochiUsa songs(4songs)`\n`!gochiusa2 - Queues some different GochiUsa songs(4songs)`\n`!railgun1 - Queues some Railgun music(4songs)`"
+        msg = "`!hearttoheart - ueues Heart to Heart(full single)`\n`!waowao - Queues WAO-WAO Powerful Day!(full single)`\n`!omoide - Queues 思い出以上になりたくて(full single)`\n`!sakkaku - Queues 錯覚CROSSROADS(full single)`\n`!angelic - Queues Angelic Angel(full single)`\n`!sunnydaysong - Queues Sunny Day Song(full single)`\n`!yumenotobira - Queues Yume no Tobira(full single)`\n`!aqours - Queues 君のこころは輝いてるかい？(3songs)`\n`!imas1 - Queues some IM@S CG songs(5songs)`\n`!imas2 - Queues some different IM@S CG songs(5songs)`\n`!imas3 - Queues other IM@S songs(4songs)`\n`!imas4 - Queues still different IM@S songs(4songs)`\n`!itsudemo - Queues (✿◠‿◠) 〜ITSUDEMO (✿◠‿◠) 〜(1song)`\n`!psychicfire - Queues PSYCHIC FIRE(1song)`\n`!brainpower - Lists Brainpower!`\n`!shunjou - Queues 春情ロマンティック(1song)`\n`!korekara - Queues これから(1song)`\n`!bokuhika - Queues 僕たちはひとつの光(1song)`\n`!storminlover - Queues Storm in Lover(1song)`\n`!magnetic - Queues ずるいよMagnetic Today(1song)`\n`!feels - ;-; (3songs)`\n`!gochiusa1 - Queues some GochiUsa songs(4songs)`\n`!gochiusa2 - Queues some different GochiUsa songs(4songs)`\n`!railgun1 - Queues some Railgun music(4songs)`\n`!eriri1 - Queues some Eriri songs(3songs)`\n`!amaburi1 - Queues some AmaBuri songs(3songs)`\n`!oregairu1 - Queues OreGairu songs(4songs)`"
         await client.send_message(message.channel, msg)
 
 #list of stuff to do
     if message.content.startswith("!todo"):
         if str(message.author.id) == "97097796372414464":
-            msg = "'Code MusicBot auto restart command' \n '~~Finish coding 10+1 scout sim~~(mostly)' \n `do envelope animations` \n 'Figure out that queue thing after shuffle' \n '~~make LewdLive MusicBot~~' \n '~~Subunit autoplaylitsts~~' \n 'Make !music command better \n `twitch emotes` \n `add trivia`\n`figure out async`\n`get specific users scouts`\n`log number of messages sent by users in channel i.e the way Eter does it`\n`save scout data`\n`change songs to their own module`"
+            msg = "Code MusicBot auto restart command \n ~~Finish coding 10+1 scout sim~~ \n Figure out that queue thing after shuffle \n ~~make LewdLive MusicBot~~ \n ~~Subunit autoplaylitsts~~ \n Make !music command better \n twitch emotes \n add trivia \n ~~figure out async~~ \n log number of messages sent by users in channel i.e the way Eter does it \n save scout data \n change songs to their own module\ntags and stuff"
             await client.send_message(message.channel, msg)
         else:
             msg = "You're not my Onii-chan!"
@@ -465,6 +465,110 @@ async def on_message(message):
         asyncio.sleep(3)
         await client.delete_message(msg_obj)
 
+        #imas3
+    if message.content == ("!imas3"):
+        import asyncio
+        msg = "!play https://www.dropbox.com/sh/cdhhg2bnjvstgpz/AABuZkw3WPYWaIYkbUmnUDn_a/01%20-LEGNE-%20Adanasu%20Tsurugi%20Hikari%20no%20Shirabe.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/sh/cdhhg2bnjvstgpz/AAC7WLKebhki6g-CX6hyBAXQa/01%20Nation%20Blue.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/sh/cdhhg2bnjvstgpz/AABhz-OCJgwIYMPp_mkSkHpHa/todokeidoru.m4a?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/sh/cdhhg2bnjvstgpz/AABdfJ5yg9qdjcmEQ3ajIaYaa/yumeiro%20-LOVE%20LAIKA%20-.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        #imas4
+    if message.content == ("!imas4"):
+        import asyncio
+        msg = "!play https://www.dropbox.com/sh/hl5jktag3abpka2/AAARw5QWJEEgZjgwawvRauwUa/01%20Koi%20Kaze.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/sh/hl5jktag3abpka2/AAA06IzWVj-mkpo1rd5L9bOea/02.%20Nebula%20Sky.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/sh/hl5jktag3abpka2/AADPJV9b7wm1jw6yUEu8RsWaa/fdsfsdh-LOVE%20LAIKA-Rosenburg%20Engel-.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/sh/hl5jktag3abpka2/AAADra0drmOtpuz2sMmL1DHva/yuubaepresent.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        #Eriri
+    if message.content == ("!eriri1"):
+        import asyncio
+        msg = "!play https://www.dropbox.com/sh/dtfa68oyd08qzif/AAAeTDsD9xttV1ODp89YcjXua/Blooming%20Lily.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/sh/dtfa68oyd08qzif/AAB0ha9NwHxLGCCxdkBEoOcRa/LOVE%20iLLUSiON%20%28Eriri%20Solo%20Ver.%29.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/sh/dtfa68oyd08qzif/AABOQNJzcjzaZFgo5jj_Exqda/Yuuki%20no%20Kamisama.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        #Oregairu1
+    if message.content == ("oregairu1"):
+        import asyncio
+        msg = "!play https://www.dropbox.com/sh/2xmhc5f8xz48qmg/AADOz0WP-QrSZqHR_4g68vkNa/02%20Kashiko%20Girl.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/sh/2xmhc5f8xz48qmg/AAAtaSnQD_qrYklJ1YyW8O8ma/07%20Happy%20End%20no%20Soba%20de.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/sh/2xmhc5f8xz48qmg/AAALcYhZUCWKg0C0JJUFftXVa/08%20Kimi%20ni%20Crescendo.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/sh/2xmhc5f8xz48qmg/AAAqnf-LXdlD6RL59oc6inHPa/09%20Honmono%20ga%20Hoshikereba.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        #Amaburi1
+    if message.content == ("!amaburi1"):
+        import asyncio
+        msg = "!play https://www.dropbox.com/sh/zrcu7v4lk2of8wa/AAD1-l20TOZ8DesC9CvX6fE3a/01%20elementario.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/sh/zrcu7v4lk2of8wa/AACcSZ_N6gtQrp7UM9bl23y3a/01%20EXTRA%20MAGIC%20HOUR.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
+
+        msg = "!play https://www.dropbox.com/sh/zrcu7v4lk2of8wa/AAArZ2SA-FNPQh_WQGYAJb33a/02%20sdklfdshfklFUN%21TASY.mp3?dl=0"
+        msg_obj = await client.send_message(message.channel, msg)
+        asyncio.sleep(3)
+        await client.delete_message(msg_obj)
 
     if message.content.startswith("!scout11"):
         # if str(message.author.id) == "97097796372414464":
@@ -605,9 +709,11 @@ async def on_message(message):
                         imagesend = imageresize.resize((1024,1080))
                         imagesend.save(imgmergedsend)
                         print(time.time()-start)
-                        await client.send_file(message.channel, imgmergedsend)
-                        msg = "{} scouted {}R's, {}SR's and {}UR's".format(message.author.mention, str(rare), str(sr), str(ur))
-                        await client.send_message(message.channel, msg)
+                        await client.send_file(message.channel, imgmergedsend, content= "{} scouted {}R's, {}SR's and {}UR's".format(message.author.mention, str(rare), str(sr), str(ur)))
+                        # msg = "{} scouted {}R's, {}SR's and {}UR's".format(message.author.mention, str(rare), str(sr), str(ur))
+                        # await client.send_message(message.channel, msg)
+                        # msg = "{} scouted {}R's, {}SR's and {}UR's".format(message.author.mention, str(rare), str(sr), str(ur))
+                        # await client.send_message(message.channel, msg)
                         print(time.time()-start)
                         print(notr)
 
