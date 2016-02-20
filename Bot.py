@@ -6,6 +6,7 @@ import requests
 import aiohttp
 import asyncio
 from PIL import Image
+import Music
 
 
 
@@ -13,27 +14,27 @@ client = discord.Client()
 user = discord.User()
 message = discord.Message()
 
-urcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=UR").json()
-urcounttotal = urcount["count"]
-srcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=SR").json()
-srcounttotal = srcount["count"]
-rcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=R").json()
-rcounttotal = rcount["count"]
-
-urlist = list()
-srlist = list()
-rlist = list()
-
-dataur = requests.get("http://schoolido.lu/api/cards/?page=1&is_promo=False&is_special=False&page_size=100&rarity=UR").json()
-for i in range(len(dataur["results"])):
-    urlist.append(dataur["results"][i]["id"])
-for x in range(1,5):
-    datasr = requests.get("http://schoolido.lu/api/cards/?page=" + str(x) + "&is_promo=False&is_special=False&page_size=100&rarity=SR").json()
-    for i in range(len(datasr["results"])):
-        srlist.append(datasr["results"][i]["id"])
-datar = requests.get("http://schoolido.lu/api/cards/?page=1&is_promo=False&is_special=False&page_size=100&rarity=R").json()
-for i in range(len(datar["results"])):
-    rlist.append(datar["results"][i]["id"])
+# urcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=UR").json()
+# urcounttotal = urcount["count"]
+# srcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=SR").json()
+# srcounttotal = srcount["count"]
+# rcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=R").json()
+# rcounttotal = rcount["count"]
+#
+# urlist = list()
+# srlist = list()
+# rlist = list()
+#
+# dataur = requests.get("http://schoolido.lu/api/cards/?page=1&is_promo=False&is_special=False&page_size=100&rarity=UR").json()
+# for i in range(len(dataur["results"])):
+#     urlist.append(dataur["results"][i]["id"])
+# for x in range(1,5):
+#     datasr = requests.get("http://schoolido.lu/api/cards/?page=" + str(x) + "&is_promo=False&is_special=False&page_size=100&rarity=SR").json()
+#     for i in range(len(datasr["results"])):
+#         srlist.append(datasr["results"][i]["id"])
+# datar = requests.get("http://schoolido.lu/api/cards/?page=1&is_promo=False&is_special=False&page_size=100&rarity=R").json()
+# for i in range(len(datar["results"])):
+#     rlist.append(datar["results"][i]["id"])
 
 
 @client.event
@@ -66,7 +67,7 @@ async def on_message(message):
 #list of stuff to do
     if message.content.startswith("!todo"):
         if str(message.author.id) == "97097796372414464":
-            msg = "Code MusicBot auto restart command \n ~~Finish coding 10+1 scout sim~~ \n Figure out that queue thing after shuffle \n ~~make LewdLive MusicBot~~ \n ~~Subunit autoplaylitsts~~ \n Make !music command better \n twitch emotes \n add trivia \n ~~figure out async~~ \n log number of messages sent by users in channel i.e the way Eter does it \n save scout data \n change songs to their own module\ntags and stuff"
+            msg = "Code MusicBot auto restart command \n ~~Finish coding 10+1 scout sim~~ \n Figure out that queue thing after shuffle \n ~~make LewdLive MusicBot~~ \n ~~Subunit autoplaylitsts~~ \n Make !music command better \n twitch emotes \n add trivia \n ~~figure out async~~ \n log number of messages sent by users in channel i.e the way Eter does it \n save scout data \n change songs to their own module\ntags and stuff\nsend songlist in PM instead"
             await client.send_message(message.channel, msg)
         else:
             msg = "You're not my Onii-chan!"
@@ -153,15 +154,17 @@ async def on_message(message):
 
         #Heart to Heart
     if message.content.startswith("!hearttoheart"):
-        import asyncio
-        msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01.%20HEART%20to%20HEART%21.mp3"
-        msg_obj = await client.send_message(message.channel, msg)
-        asyncio.sleep(3)
-        await client.delete_message(msg_obj)
-        msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20%E5%B5%90%E3%81%AE%E3%81%AA%E3%81%8B%E3%81%AE%E6%81%8B%E3%81%A0%E3%81%8B%E3%82%89%28muse%29.mp3"
-        msg_obj = await client.send_message(message.channel, msg)
-        asyncio.sleep(3)
-        await client.delete_message(msg_obj)
+        # import asyncio
+        # msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/01.%20HEART%20to%20HEART%21.mp3"
+        # msg_obj = await client.send_message(message.channel, msg)
+        # asyncio.sleep(3)
+        # await client.delete_message(msg_obj)
+        # msg = "!play https://dl.dropboxusercontent.com/u/24168007/ShareX/2016/01/LoveLive%20Music/02.%20%E5%B5%90%E3%81%AE%E3%81%AA%E3%81%8B%E3%81%AE%E6%81%8B%E3%81%A0%E3%81%8B%E3%82%89%28muse%29.mp3"
+        # msg_obj = await client.send_message(message.channel, msg)
+        # asyncio.sleep(3)
+        # await client.delete_message(msg_obj)
+        timessquare = message.channel
+        await Music.hearttoheart(timessquare)
 
         #WAO-WAO Powerful Day
     if message.content.startswith("!waowao"):
@@ -530,7 +533,7 @@ async def on_message(message):
         await client.delete_message(msg_obj)
 
         #Oregairu1
-    if message.content == ("oregairu1"):
+    if message.content == ("!oregairu1"):
         import asyncio
         msg = "!play https://www.dropbox.com/sh/2xmhc5f8xz48qmg/AADOz0WP-QrSZqHR_4g68vkNa/02%20Kashiko%20Girl.mp3?dl=0"
         msg_obj = await client.send_message(message.channel, msg)
@@ -569,6 +572,12 @@ async def on_message(message):
         msg_obj = await client.send_message(message.channel, msg)
         asyncio.sleep(3)
         await client.delete_message(msg_obj)
+
+    if message.content.startswith("!gameupdate"):
+        if message.author.id == ("97097796372414464"):
+            await gameupdate("@lolibot for help")
+            msg = "Okay link Onii-chan :heart:"
+            await client.send_message(message.channel, msg)
 
     if message.content.startswith("!scout11"):
         # if str(message.author.id) == "97097796372414464":
@@ -864,6 +873,11 @@ async def get_url(url):
     response = await aiohttp.request("GET", url)
     data = await response.json()
     return data
+
+async def gameupdate(game):
+    gamename = str(game)
+    await client.change_status(game=discord.Game(name=gamename))
+    return
 
 
 
