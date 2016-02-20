@@ -13,28 +13,29 @@ import Music
 client = discord.Client()
 user = discord.User()
 message = discord.Message()
+scoutStats = {}
 
-# urcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=UR").json()
-# urcounttotal = urcount["count"]
-# srcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=SR").json()
-# srcounttotal = srcount["count"]
-# rcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=R").json()
-# rcounttotal = rcount["count"]
-#
-# urlist = list()
-# srlist = list()
-# rlist = list()
-#
-# dataur = requests.get("http://schoolido.lu/api/cards/?page=1&is_promo=False&is_special=False&page_size=100&rarity=UR").json()
-# for i in range(len(dataur["results"])):
-#     urlist.append(dataur["results"][i]["id"])
-# for x in range(1,5):
-#     datasr = requests.get("http://schoolido.lu/api/cards/?page=" + str(x) + "&is_promo=False&is_special=False&page_size=100&rarity=SR").json()
-#     for i in range(len(datasr["results"])):
-#         srlist.append(datasr["results"][i]["id"])
-# datar = requests.get("http://schoolido.lu/api/cards/?page=1&is_promo=False&is_special=False&page_size=100&rarity=R").json()
-# for i in range(len(datar["results"])):
-#     rlist.append(datar["results"][i]["id"])
+urcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=UR").json()
+urcounttotal = urcount["count"]
+srcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=SR").json()
+srcounttotal = srcount["count"]
+rcount = requests.get("http://schoolido.lu/api/cards/?is_promo=False&is_special=False&rarity=R").json()
+rcounttotal = rcount["count"]
+
+urlist = list()
+srlist = list()
+rlist = list()
+
+dataur = requests.get("http://schoolido.lu/api/cards/?page=1&is_promo=False&is_special=False&page_size=100&rarity=UR").json()
+for i in range(len(dataur["results"])):
+    urlist.append(dataur["results"][i]["id"])
+for x in range(1,5):
+    datasr = requests.get("http://schoolido.lu/api/cards/?page=" + str(x) + "&is_promo=False&is_special=False&page_size=100&rarity=SR").json()
+    for i in range(len(datasr["results"])):
+        srlist.append(datasr["results"][i]["id"])
+datar = requests.get("http://schoolido.lu/api/cards/?page=1&is_promo=False&is_special=False&page_size=100&rarity=R").json()
+for i in range(len(datar["results"])):
+    rlist.append(datar["results"][i]["id"])
 
 
 @client.event
@@ -607,7 +608,7 @@ async def on_message(message):
                             cardurl = data["card_image"]
                             async with session.get(cardurl) as resp:
                                 cardimg = await resp.read()
-                                with open("card" + str(x) + ".png", "wb") as f:
+                                with open((os.path.join(imgsave, "card" + str(x) + ".png")), "wb") as f:
                                     f.write(cardimg)
                             rare += 1
                         if 91 <= chance <= 99:
@@ -617,7 +618,7 @@ async def on_message(message):
                             cardurl = data["card_image"]
                             async with session.get(cardurl) as resp:
                                 cardimg = await resp.read()
-                                with open("card" + str(x) + ".png", "wb") as f:
+                                with open((os.path.join(imgsave, "card" + str(x) + ".png")), "wb") as f:
                                     f.write(cardimg)
                             notr += 1
                             sr += 1
@@ -628,7 +629,7 @@ async def on_message(message):
                             cardurl = data["card_image"]
                             async with session.get(cardurl) as resp:
                                 cardimg = await resp.read()
-                                with open("card" + str(x) + ".png", "wb") as f:
+                                with open((os.path.join(imgsave, "card" + str(x) + ".png")), "wb") as f:
                                     f.write(cardimg)
                             notr += 1
                             ur += 1
@@ -642,7 +643,7 @@ async def on_message(message):
                             cardurl = data["card_image"]
                             async with session.get(cardurl) as resp:
                                 cardimg = await resp.read()
-                                with open("card" + str(x) + ".png", "wb") as f:
+                                with open((os.path.join(imgsave, "card" + str(x) + ".png")), "wb") as f:
                                     f.write(cardimg)
                             sr += 1
                             notr = notr + 1
@@ -653,7 +654,7 @@ async def on_message(message):
                             cardurl = data["card_image"]
                             async with session.get(cardurl) as resp:
                                 cardimg = await resp.read()
-                                with open("card" + str(x) + ".png", "wb") as f:
+                                with open((os.path.join(imgsave, "card" + str(x) + ".png")), "wb") as f:
                                     f.write(cardimg)
                             ur += 1
                 #if at least 1 SR/UR in first 10, then draw normal chance for last card
@@ -666,7 +667,7 @@ async def on_message(message):
                             cardurl = data["card_image"]
                             async with session.get(cardurl) as resp:
                                 cardimg = await resp.read()
-                                with open("card" + str(x) + ".png", "wb") as f:
+                                with open((os.path.join(imgsave, "card" + str(x) + ".png")), "wb") as f:
                                     f.write(cardimg)
                             rare += 1
                         if 91 <= chance1 <= 99:
@@ -676,7 +677,7 @@ async def on_message(message):
                             cardurl = data["card_image"]
                             async with session.get(cardurl) as resp:
                                 cardimg = await resp.read()
-                                with open("card" + str(x) + ".png", "wb") as f:
+                                with open((os.path.join(imgsave, "card" + str(x) + ".png")), "wb") as f:
                                     f.write(cardimg)
                             sr += 1
                             notr = notr + 1
@@ -687,7 +688,7 @@ async def on_message(message):
                             cardurl = data["card_image"]
                             async with session.get(cardurl) as resp:
                                 cardimg = await resp.read()
-                                with open("card" + str(x) + ".png", "wb") as f:
+                                with open((os.path.join(imgsave, "card" + str(x) + ".png")), "wb") as f:
                                     f.write(cardimg)
                             ur += 1
                         print(time.time()-start)
@@ -718,7 +719,17 @@ async def on_message(message):
                         imagesend = imageresize.resize((1024,1080))
                         imagesend.save(imgmergedsend)
                         print(time.time()-start)
-                        await client.send_file(message.channel, imgmergedsend, content= "{} scouted {}R's, {}SR's and {}UR's".format(message.author.mention, str(rare), str(sr), str(ur)))
+                        currentAuthorStats = None
+                        
+                        if (message.author.id in scoutStats):
+                            currentAuthorStats = scoutStats[message.author.id]
+                            currentAuthorStats.update(rare, sr, ur)
+                        else:
+                            currentAuthorStats = Stat()
+                            currentAuthorStats.update(rare, sr, ur)
+                            scoutStats[message.author.id] = currentAuthorStats
+                        
+                        await client.send_file(message.channel, imgmergedsend, content= "{} scouted {}R's, {}SR's and {}UR's this scout.\nOver the course of {} scouts, {} has scouted {}R's, {}SR's and {}UR's ".format(message.author.mention, str(rare), str(sr), str(ur), str(currentAuthorStats.count), message.author.name, str(currentAuthorStats.r), str(currentAuthorStats.sr), str(currentAuthorStats.ur)))
                         # msg = "{} scouted {}R's, {}SR's and {}UR's".format(message.author.mention, str(rare), str(sr), str(ur))
                         # await client.send_message(message.channel, msg)
                         # msg = "{} scouted {}R's, {}SR's and {}UR's".format(message.author.mention, str(rare), str(sr), str(ur))
@@ -889,11 +900,11 @@ class Stat:
         self.r = 0
         self.sr = 0
         self.ur = 0
-    def update(self, scout_res):
+    def update(self, rCount, srCount, urCount):
         self.count += 1
-        self.r += scout_res.count('r')
-        self.sr += scout_res.count('sr')
-        self.ur += scout_res.count('ur')
+        self.r += rCount
+        self.sr += srCount
+        self.ur += urCount
 
 #client.change_status(game=discord.Game(name="your custom game here"))
 @client.event
